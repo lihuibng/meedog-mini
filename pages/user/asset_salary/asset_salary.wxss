@@ -1,0 +1,71 @@
+/* pages/user/education/education.wxss */
+
+
+/* pages/user/basic_info/basic_info.wxss */
+
+.container {
+    background: #ffffff;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.page-section-gap {
+    box-sizing: border-box;
+    padding: 0 30rpx;
+}
+
+.page-body-button {
+    margin-bottom: 30rpx;
+}
+
+.customCallout {
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    width: 150px;
+    height: 40px;
+    display: inline-flex;
+    padding: 5px 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+}
+
+.content {
+    flex: 0 1 auto;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.asset-income {
+    width: 100%;
+    background: rgb(255, 255, 255);
+}
+
+.asset-income .asset-tit {
+    width: 100%;
+    background: rgb(255, 255, 255);
+    font: italic bold 12px/30px arial, sans-serif;
+    font-size: small;
+    text-align: center;
+    margin: 0 auto;
+}
+
+mp-form {
+    width: 100%;
+    background: rgb(255, 255, 255);
+}

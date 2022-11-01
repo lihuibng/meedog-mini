@@ -1,0 +1,38 @@
+/* pages/search/welcome/welcome.wxss */
+
+page {
+    height: 100%;
+    background: white;
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.head image {
+    background: white;
+    margin-top: 200rpx;
+    border-radius: 50%;
+    width: 175rpx;
+    height: 175rpx;
+}
+
+.head .page-section {
+    color: white;
+    font-size: 21rpx;
+    margin-top: 50rpx;
+    line-height: 80rpx;
+    background: #f3c74f;
+}
+
+rich-text {
+    width: 700rpx;
+    padding: 0rpx 0;
+}
+
+.rich-text-wrp {
+    padding: 0 25rpx;
+    background-color: #fff;
+}

@@ -1,0 +1,45 @@
+<!--pages/activity/add/index.wxml-->
+<view class="container">
+    <view class="add-activity">
+        <view class="location" wx:if="{{chosen == true}}">
+            <view class="activity_name"><textarea class="name" placeholder="请输入活动名称..." style="width:{{width*4+44}}px"
+                    auto-height="{{true}}" bindinput="getActivityName" id="" maxlength="150"></textarea> </view>
+            <view class="activity_desc"><textarea class="desc" placeholder="请输入活动内容..." style="width:{{width*4+44}}px"
+                    auto-height="{{true}}" bindinput="getActivityDesc" id="" maxlength="150"></textarea> </view>
+            <view class="organizer_nickname"><textarea class="nickname" placeholder="请输入活动组织者昵称..."
+                    style="width:{{width*4+44}}px" auto-height="{{true}}" bindinput="getOrganizerNickname" id=""
+                    maxlength="150"></textarea> </view>
+            <view class="organizer_wechat"><textarea class="wechat" placeholder="请输入活动组织者微信..."
+                    style="width:{{width*4+44}}px" auto-height="{{true}}" bindinput="getOrganizerWechat" id=""
+                    maxlength="150"></textarea> </view>
+            <view class="organizer_phone"><textarea class="phone" placeholder="请输入活动组织者电话..."
+                    style="width:{{width*4+44}}px" auto-height="{{true}}" bindinput="getOrganizerPhone" id=""
+                    maxlength="150"></textarea> </view>
+            <view class="avatar"><textarea class="avatar" placeholder="请输入活动组织者头像..." style="width:{{width*4+44}}px"
+                    auto-height="{{true}}" bindinput="getAvatar" id="" maxlength="150"></textarea> </view>
+            <view style="display:inline;margin:5px 8px">
+                <view class="upload-d" style="width:{{width}}px;height:{{width}}px;display:inline-block;"
+                    wx:for="{{uploadPicPaths}}">
+                    <image bindtap="delImg" data-index="{{index}}" class="del-img" style="width:45rpx;height:45rpx;"
+                        src="../../../static/images/close.png"></image>
+                    <image bindtap="previewImg" data-imgurl="{{item}}" mode="aspectFill"
+                        style="{{index>=4?'margin-left:8px':''}}" class="upload" src="{{item}}"></image>
+                </view>
+                <image bindtap="insertImg" wx:if="{{uploadPicIds.length<9}}"
+                    style="width:{{width}}px;height:{{width}}px;{{uploadPicPaths.length>=4?'margin-left:18px':'margin-left:10px'}}"
+                    src="../../../static/images/uploadImg.png"></image>
+            </view>
+            <view class="weui-btn-input">
+                <button class="weui-btn" type="primary" bindtap="bindAdd">确定</button>
+            </view>
+        </view>
+        <view class="location" wx:else="{{chosen == flase}}">
+            <map id="mapId" class="map" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}"
+                controls="{{controls}}" circles="{{circles}}" polyline="{{polyline}}" bindcontroltap="controlClick"
+                bindregionchange="regionChange"></map>
+            <view class="weui-btn-area">
+                <button class="weui-btn" type="primary" bindtap="selectedClick">选择位置</button>
+            </view>
+        </view>
+    </view>
+</view>

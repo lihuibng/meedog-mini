@@ -1,0 +1,6 @@
+<!--pages/map/map_index/map_index.wxml-->
+<view class='container'>
+    <view class="map_index" bindtap='onChangeAddress'>
+        <input class="map_input" value="{{ name }}" name="address" placeholder="选择地点" />
+    </view>
+</view>

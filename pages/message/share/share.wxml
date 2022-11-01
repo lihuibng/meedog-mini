@@ -1,0 +1,66 @@
+<!--pages/message/share/share.wxml-->
+<view class="page">
+    <view class="fixed">
+        <view class="btn">
+            <view class="btn-item">
+                <button open-type="share" class="share-btn" catchtap="shareHandle" data-item="{{detail}}" data-id="{{detail.id}}">
+          <image class="like" src="../../../static/images/share.png"></image>
+          <text class="num">{{detail.forwardCount||0}}</text>
+        </button>
+            </view>
+            <view class="btn-item" bindtap="showModel" data-item="{{detail}}">
+                <image class="like" src="../../../static/images/comment.png"></image>
+                <view class="num">{{detail.commentCount}}</view>
+            </view>
+            <view class="btn-item">
+                <image class="like {{current?'active':''}}" id="like" catchtap="likeHandle" data-shareId="{{detail.id}}" src="{{detail.likeCount?'../../../static/images/like.png':'../../../static/images/unlike.png'}}"></image>
+                <view class="num">{{detail.likeCount}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="author-info">
+        <image class="avatar" src="{{detail.userIcon}}" mode="aspectFill"></image>
+        <view class="name-time">{{detail.userNickName}}
+            <view>{{detail.createTime}}</view>
+        </view>
+    </view>
+    <view class="share-content">
+        {{detail.content}}
+    </view>
+    <view style="margin-left:9px">
+        <view class="share-picture" wx:for="{{img}}" wx:key="index" style="width:{{img.length==1?width*2:width}}px;height:{{img.length==1?width*2:width}}px">
+            <image bindtap="previews" data-pre="{{img}}" data-index="{{item}}" mode="aspectFill" src="{{item}}" />
+        </view>
+    </view>
+    <view class="box-line"></view>
+    <view class="flex">
+        <view class="comment">评论</view>
+        <view class="support"> {{detail.likeCount}}点赞</view>
+    </view>
+    <view wx:for="{{list}}" class="comment-content">
+        <view class="com-author-info">
+            <view>
+                <image class="com-avatar" src="{{item.userIcon}}" mode="aspectFill"></image>
+            </view>
+            <view class="com">
+                <view>{{item.userNickName}}</view>
+                <view>{{item.createTime}}</view>
+                <view class="com-contents">
+                    {{item.content}}
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="null">暂无评论</view>
+    <pop id="pop" showModel="{{showModel}}">
+        <view>
+            <view class="cancel">
+                <text bindtap="showModel">取消</text>
+            </view>
+            <view class="content_value">
+                <textarea name="value" id="" bindinput="getValue" cols="30" rows="10" placeholder-class="placeh" value="{{content}}" placeholder="请输入内容"></textarea>
+            </view>
+            <button class="weui-btn" type="primary"  bindtap="addComment">发送</button>
+        </view>
+    </pop>
+</view>

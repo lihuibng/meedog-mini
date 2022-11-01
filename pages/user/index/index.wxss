@@ -1,0 +1,367 @@
+.container {
+    background: #ffffff;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 20rpx;
+    position: relative;
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;*/
+}
+
+.account_info {
+    width: 100%;
+    background: rgb(255, 255, 255);
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    padding-bottom: 20rpx;
+    height: 222rpx;
+}
+
+.account_info .userAvatarUrl {
+    height: 192rpx;
+    width: 192rpx;
+}
+
+.account_info .gender {
+    padding: 20rpx;
+    border-top: 1rpx solid #eee;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.account_info .gender .icon {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 30rpx;
+}
+
+.account_info .nickname {
+    padding: 20rpx;
+    border-top: 1rpx solid #eee;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.account_info .nickname .icon {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 30rpx;
+}
+
+.sensitive-userinfo {
+    width: 100%;
+    background: rgb(255, 255, 255);
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+    height: 192rpx;
+}
+
+.sensitive-userinfo .sensitive_tit {
+    height: 64rpx;
+    line-height: 100rpx;
+    width: 100%;
+    border: #f4f4f4;
+}
+
+.sensitive-userinfo .sensitive_top {
+    text-align: left;
+    width: 100%;
+}
+
+.sensitive-userinfo .assets {
+    clear: both;
+    width: 100%;
+}
+
+.sensitive-userinfo .assets .li {
+    float: left;
+    width: 25%;
+    height: 160rpx;
+    text-align: center;
+}
+
+.sensitive-userinfo .assets .li .a {
+    clear: both;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+
+}
+
+.sensitive-userinfo .assets .icon {
+    margin: 0 auto;
+    display: block;
+    height: 52.803rpx;
+    width: 52.803rpx;
+    margin-bottom: 5rpx;
+}
+
+.sensitive-userinfo .icon.asset {
+    background: url(http://XXXXXX:8082/icon/img/salary_white.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.sensitive-userinfo .icon.health {
+    background: url(http://XXXXXX:8082/icon/img/healthcare_red.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.sensitive-userinfo .icon.broken {
+    background: url(http://XXXXXX:8082/icon/img/broken-heart-red.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.sensitive-userinfo .icon.constraint {
+    background: url(http://XXXXXX:8082/icon/img/no-racism_brown.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.sensitive-userinfo .icon.confirm {
+    background: url(http://XXXXXX:8082/icon/img/heart_red.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.sensitive-userinfo .icon.identify {
+    background: url(http://XXXXXX:8082/icon/img/identification_pink.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.sensitive-userinfo .icon.security {
+    background: url(http://XXXXXX:8082/icon/img/confidential-email-blue.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.sensitive-userinfo .assets .txt {
+    display: block;
+    height: 50rpx;
+    line-height: 50rpx;
+    width: 100%;
+    font-size: 24rpx;
+    color: #b4282d;
+}
+
+.basic-userinfo {
+    width: 100%;
+    background: rgb(255, 255, 255);
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    padding-bottom: 20rpx;
+    height: 320rpx;
+}
+
+.basic-userinfo .basic_tit {
+    height: 64rpx;
+    line-height: 100rpx;
+    width: 100%;
+    border: #f4f4f4;
+}
+
+.basic-userinfo .basic_top {
+    text-align: left;
+    width: 100%;
+}
+
+.basic-userinfo .item {
+    float: left;
+    width: 25%;
+    height: 144rpx;
+    text-align: center;
+}
+
+.basic-userinfo .item .a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.basic-userinfo .item.no-border {
+    border-right: 0;
+}
+
+.basic-userinfo .item.item-bottom {
+    border-bottom: none;
+}
+
+.basic-userinfo .icon {
+    margin: 0 auto;
+    display: block;
+    height: 52.803rpx;
+    width: 52.803rpx;
+    margin-bottom: 16rpx;
+}
+
+.basic-userinfo .icon.idblue {
+    background: url(http://XXXXXX:8082/icon/img/user_green.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.basic-userinfo .icon.edu {
+    background: url(http://XXXXXX:8082/icon/img/graduated_v_lightblue.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.basic-userinfo .icon.lover {
+    background: url(http://XXXXXX:8082/icon/img/lover_gray.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.basic-userinfo .icon.spirit {
+    background: url(http://XXXXXX:8082/icon/img/idea_blue.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.basic-userinfo .icon.charactor {
+    background: url(http://XXXXXX:8082/icon/img/magic_yellow.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.basic-userinfo .icon.food {
+    background: url(http://XXXXXX:8082/icon/img/fast-food-yellow.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.basic-userinfo .icon.self {
+    background: url(http://XXXXXX:8082/icon/img/family_pink.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.basic-userinfo .icon.travel {
+    background: url(http://XXXXXX:8082/icon/img/footprint_black.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.basic-userinfo .icon.music {
+    background: url(http://XXXXXX:8082/icon/img/music-note_green.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.basic-userinfo .icon.movie {
+    background: url(http://XXXXXX:8082/icon/img/video-camera-orange.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.basic-userinfo .icon.book {
+    background: url(http://XXXXXX:8082/icon/img/books_red.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.basic-userinfo .icon.education {
+    background: url(http://XXXXXX:8082/icon/img/edu.png) 0 0 no-repeat;
+    background-size: 52.803rpx;
+}
+
+.basic-userinfo .txt {
+    display: block;
+    height: 24rpx;
+    width: 100%;
+    font-size: 24rpx;
+    color: #333;
+}
+
+.other {
+    width: 100%;
+    background: rgb(255, 255, 255);
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    padding-bottom: 20rpx;
+    height: 192rpx;
+}
+
+.other .other_tit {
+    height: 64rpx;
+    line-height: 100rpx;
+    width: 100%;
+    border: #f4f4f4;
+}
+
+.other .other_top {
+    text-align: left;
+    width: 100%;
+}
+
+.other .item {
+    float: left;
+    width: 25%;
+    height: 144rpx;
+    text-align: center;
+}
+
+.other .item .a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.other .item.no-border {
+    border-right: 0;
+}
+
+.other .icon {
+    margin: 0 auto;
+    display: block;
+    height: 52.803rpx;
+    width: 52.803rpx;
+    margin-bottom: 16rpx;
+}
+
+.other .icon.share {
+    background: url(http://XXXXXX:8082/icon/img/weixin.png) 0 0 no-repeat;
+    background-size: 52.803rpx;
+}
+
+.other .icon.customer {
+    background: url(http://XXXXXX:8082/icon/img/icon-service-r.png) 0 0 no-repeat;
+    background-size: 52.803rpx;
+}
+
+.other .icon.feedback {
+    background: url(http://XXXXXX:8082/icon/img/feedback.png) 0 0 no-repeat;
+    background-size: 52.803rpx;
+}
+
+.other .txt {
+    display: block;
+    height: 24rpx;
+    width: 100%;
+    font-size: 24rpx;
+    color: #333;
+}
+
+.logout {
+    margin-top: 20rpx;
+    height: 101rpx;
+    width: 100%;
+    line-height: 101rpx;
+    text-align: center;
+    background: #fff;
+    color: #333;
+    font-size: 30rpx;
+}
+
+.service {
+    position: static;
+    background-color: transparent;
+    color: transparent;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-align: left;
+    line-height: normal;
+    display: inline;
+}

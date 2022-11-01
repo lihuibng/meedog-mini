@@ -1,0 +1,180 @@
+<view class="container" wx:if="{{isshow}}">
+    <view class="account_info">
+        <button class="userinfo">
+            <view class="weui-flex">
+                <view class="weui-flex__item">
+                    <view class="placeholder">
+                        <view class="userAvatarUrl">
+                            <open-data type="userAvatarUrl"> </open-data>
+                        </view>
+                    </view>
+                </view>
+                <view class="weui-flex__item">
+                    <view class="gender">
+                        <image class="icon" src="http://XXXXXX:8082/icon/img/gender-symbols_pink.png"></image>
+                        <open-data type="userGender" lang="zh_CN"></open-data>
+                    </view>
+                    <view class="nickname">
+                        <image class="icon" src="http://XXXXXX:8082/icon/img/user_green.png"></image>
+                        <open-data type="userNickName" lang="zh_CN"></open-data>
+                    </view>
+                </view>
+            </view>
+        </button>
+    </view>
+    <view style="clear:both;height:20rpx;background: #eee;width:100%;"></view>
+    <view class="sensitive-userinfo">
+        <view class='sensitive_tit' style="width: 710rpx; height: 78rpx; display: block; box-sizing: border-box">
+            <text class='sensitive_top'>私密信息</text>
+        </view>
+        <view class='assets'>
+            <view class='li'>
+                <navigator url="../../user/asset_salary/asset_salary" class="a">
+                    <text class="icon asset"></text>
+                    <text class="txt" style="width: 176rpx; height: 52rpx; display: block; box-sizing: border-box">资产收入</text>
+                </navigator>
+            </view>
+            <!--comment temp-->
+            <!--view class='li'>
+                <navigator url="../../user/account/account" class="a">
+                    <text class="icon security"></text>
+                    <text class="txt" style="width: 176rpx; height: 52rpx; display: block; box-sizing: border-box">账号</text>
+                </navigator>
+            </view>
+            <view class='li'>
+                <navigator url="../../user/identify/identify" class="a">
+                    <text class="icon identify"></text>
+                    <text class="txt" style="width: 176rpx; height: 52rpx; display: block; box-sizing: border-box">认证</text>
+                </navigator>
+            </view>
+            <view class='li'>
+                <navigator url="../../user/health/health" class="a">
+                    <text class="icon health"></text>
+                    <text class="txt" style="width: 176rpx; height: 52rpx; display: block; box-sizing: border-box">健康</text>
+                </navigator>
+            </view>
+            <view class='li'>
+                <navigator url="../../user/love_history/love_history" class="a">
+                    <text class="icon broken"></text>
+                    <text class="txt" style="width: 176rpx; height: 52rpx; display: block; box-sizing: border-box">同居恋爱史</text>
+                </navigator>
+            </view>
+            <view class='li'>
+                <navigator url="../../user/love_constraint/love_constraint" class="a">
+                    <text class="icon constraint"></text>
+                    <text class="txt" style="width: 176rpx; height: 52rpx; display: block; box-sizing: border-box">恋爱约束</text>
+                </navigator>
+            </view>
+            <view class='li'>
+                <navigator url="../../user/love_confirmation/love_confirmation" class="a">
+                    <text class="icon confirm"></text>
+                    <text class="txt" style="width: 176rpx; height: 52rpx; display: block; box-sizing: border-box">恋爱确认书</text>
+                </navigator>
+            </view-->
+        </view>
+    </view>
+    <view style="clear:both;height:20rpx;background: #eee;width:100%;"></view>
+    <view class="basic-userinfo">
+        <view class='basic_tit' style="width: 710rpx; height: 78rpx; display: block; box-sizing: border-box">
+            <text class='basic_top'>基本信息</text>
+        </view>
+        <button class='service'>
+            <view class="item no-border">
+                <navigator url="../../user/basic_info/basic_info" class="a">
+                    <text class="icon idblue"></text>
+                    <text class="txt" style="width: 176rpx; height: 52rpx; display: block; box-sizing: border-box">基本</text>
+                </navigator>
+            </view>
+        </button>
+        <view class="item">
+            <navigator url="../../user/education_list/education_list" class="a">
+                <text class="icon edu"></text>
+                <text class="txt" style="width: 176rpx; height: 52rpx; display: block; box-sizing: border-box">教育</text>
+            </navigator>
+        </view>
+        <!--view class="item">
+            <navigator url="../../user/spirit/spirit" class="a">
+                <text class="icon spirit"></text>
+                <text class="txt" style="width: 176rpx; height: 52rpx; display: block; box-sizing: border-box">三观</text>
+            </navigator>
+        </view>
+        <view class="item">
+            <navigator url="../../user/foods_list/foods_list" class="a">
+                <text class="icon food"></text>
+                <text class="txt" style="width: 176rpx; height: 52rpx; display: block; box-sizing: border-box">吃喝玩乐</text>
+            </navigator>
+        </view>
+        <view class="item">
+            <navigator url="../../user/footprint_list/footprint_list" class="a">
+                <text class="icon travel"></text>
+                <text class="txt" style="width: 176rpx; height: 52rpx; display: block; box-sizing: border-box">足迹</text>
+            </navigator>
+        </view>
+        <view class="item">
+            <navigator url="../../user/music/music" class="a">
+                <text class="icon music"></text>
+                <text class="txt" style="width: 176rpx; height: 52rpx; display: block; box-sizing: border-box">音乐</text>
+            </navigator>
+        </view>
+        <view class="item">
+            <navigator url="../../user/movie_list/movie_list" class="a">
+                <text class="icon movie"></text>
+                <text class="txt" style="width: 176rpx; height: 52rpx; display: block; box-sizing: border-box">电影</text>
+            </navigator>
+        </view>
+        <view class="item">
+            <navigator url="../../user/book_list/book_list" class="a">
+                <text class="icon book"></text>
+                <text class="txt" style="width: 176rpx; height: 52rpx; display: block; box-sizing: border-box">读书</text>
+            </navigator>
+        </view>
+
+        <view class="item no-border">
+            <navigator url="../../user/charactor/charactor" class="a">
+                <text class="icon charactor"></text>
+                <text class="txt" style="width: 176rpx; height: 52rpx; display: block; box-sizing: border-box">性格优劣</text>
+            </navigator>
+        </view>
+
+        <view class="item no-border">
+            <navigator url="../../user/lover_standard/lover_standard" class="a">
+                <text class="icon lover"></text>
+                <text class="txt" style="width: 176rpx; height: 52rpx; display: block; box-sizing: border-box">择偶要求</text>
+            </navigator>
+        </view>
+        <view class="item no-border">
+            <navigator url="../../user/evaluate_plan/evaluate_plan" class="a">
+                <text class="icon self"></text>
+                <text class="txt" style="width: 178rpx; height: 52rpx; display: block; box-sizing: border-box">评价与规划</text>
+            </navigator>
+        </view-->
+    </view>
+    <view style="clear:both;height:20rpx;background: #eee;width:100%;"></view>
+    <view class="other">
+        <view class='other_tit' style="width: 710rpx; height: 78rpx; display: block; box-sizing: border-box">
+            <text class='other_top' >服务</text>
+        </view>
+        <view class="item no-border">
+            <navigator url="../../user/share/share" class="a">
+                <text class="icon share"></text>
+                <text class="txt" style="width: 176rpx; height: 52rpx; display: block; box-sizing: border-box">邀请好友</text>
+            </navigator>
+        </view>
+        <view class="item no-border">
+            <navigator url="../../user/feedback/feedback" class="a">
+                <text class="icon feedback"></text>
+                <text class="txt" style="width: 176rpx; height: 52rpx; display: block; box-sizing: border-box">需求反馈</text>
+            </navigator>
+        </view>
+        <button class='service' open-type="contact">
+            <view class="item no-border">
+                <navigator url="../../user/customer/customer" class="a">
+                    <text class="icon customer"></text>
+                    <text class="txt" style="width: 176rpx; height: 52rpx; display: block; box-sizing: border-box">客服</text>
+                </navigator>
+            </view>
+        </button>
+    </view>
+    <view style="clear:both;height:20rpx;background: #eee;width:100%;"></view>
+    <view class="logout" bindtap="exitLogin">退出登录</view>
+</view>

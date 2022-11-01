@@ -1,0 +1,13 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "mp-searchbar": "../../../component/weui/searchbar/searchbar",
+    "mp-dialog": "../../../component/weui/dialog/dialog",
+    "mp-cells": "../../../component/weui/cell/cell",
+    "mp-cell": "../../../component/weui/cells/cells",
+    "zy-slider": "../../../component/zyslider/zyslider",
+    "mp-form": "../../../component/weui/form/form",
+    "mp-checkbox-group": "../../../component/weui/checkbox-group/checkbox-group",
+    "mp-checkbox": "../../../component/weui/checkbox/checkbox"
+  }
+}

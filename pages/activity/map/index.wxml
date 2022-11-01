@@ -1,0 +1,2 @@
+<!--pages/activity/map/index.wxml-->
+<map polyline='{{polyline}}' style='width:100vh; height:100vh' include-points="{{markers}}" show-location ></map>

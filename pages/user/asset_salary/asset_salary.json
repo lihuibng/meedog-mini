@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "资产收入",
+  "usingComponents": {
+    "mp-toptips": "../../../component/weui/toptips/toptips",
+    "mp-cells": "../../../component/weui/cells/cells",
+    "mp-cell": "../../../component/weui/cell/cell",
+    "mp-checkbox": "../../../component/weui/checkbox/checkbox",
+    "mp-checkbox-group": "../../../component/weui/checkbox-group/checkbox-group",
+    "mp-form": "../../../component/weui/form/form"
+  }
+}

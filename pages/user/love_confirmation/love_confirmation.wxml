@@ -1,0 +1,31 @@
+<!--pages/user/love_confirmation/love_confirmation.wxml-->
+<!--pages/user/love_constraint/love_constraint.wxml-->
+<!--pages/user/health/health.wxml-->
+<!--pages/user/love_history/love_history.wxml-->
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="container" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="love_confirmation">
+        <mp-form id="form" models="{{formData}}">
+            <view class="weui-flex">
+                <mp-cells class="confirmations">
+                    <mp-cell prop="confirmation" style="text-align:left;" title="恋爱确认书" ext-class="">
+                        <textarea name="constraint" id="" cols="30" bindinput="onLoveExperienceInput"
+                            style="border:1px solid #a1a1a1;width:99%;height:99%;border-radius:5px;"
+                            placeholder="例如: 我xxx 与 xxx 确认 与2020年3月1日 15:00:00 开始恋爱，标志事件接吻" rows="5"
+                            maxlength="1024"></textarea>
+                    </mp-cell>
+                </mp-cells>
+            </view>
+            <view class="section__ctn">
+                <image style="background-color: #eeeeee;" src="{{src}}"></image>
+            </view>
+            <view style="text-align:center" class="upload_button">
+                <button bindtap='chooseImageTap'>上传打印确认书照片</button>
+            </view>
+            <!--button bindtap='bindDownloadImage'>获取图片</button-->
+        </mp-form>
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+        </view>
+    </view>
+</view>

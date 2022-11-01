@@ -1,0 +1,193 @@
+<!--pages/user/basic_info/basic_info.wxml-->
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="container" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="basic-userinfo">
+        <mp-form id="form" models="{{formData}}">
+            <mp-cells class="basic">
+                <mp-cell prop="degree" style="text-align:left;" title="学历" ext-class="">
+                    <picker bindchange="bindDegreeChange"
+                        style="text-align: center; padding: 2px 5px; width: 480rpx; height: 66rpx; border: 1px solid #a1a1a1; border-radius: 5px"
+                        value="{{degreeIndex}}" range="{{degrees}}">
+                        <view class="weui-select">
+                            {{degrees[degreeIndex]}}</view>
+                    </picker>
+                </mp-cell>
+                <!--mp-cell prop="degree" style="text-align:left;" title="肄业" ext-class="">
+                    <view class="weui-flex">
+                        <view class="weui-flex__item">
+                            <mp-cells style="text-align:left;" title="毕业证">
+                                <view class="weui-cell weui-cell_select"
+                                    style="position: relative; display: flex; box-sizing: border-box">
+                                    <view class="weui-cell__hd">
+                                        <picker bindchange="bindGraduatedStatusChange" value="{{isGraduated}}"
+                                            range="{{graduatedStatus}}">
+                                            <view class="weui-select"
+                                                style="display: block; box-sizing: border-box; position: relative;">
+                                                {{ graduatedStatus[isGraduated]}}
+                                            </view>
+                                        </picker>
+                                    </view>
+                                </view>
+                            </mp-cells>
+                        </view>
+                        <view class="weui-flex__item"
+                            style="position: relative; display: block; box-sizing: border-box">
+                            <mp-cells style="text-align:left;" title="学位证">
+                                <view class="weui-cell weui-cell_select" style="position: relative;">
+                                    <view class="weui-cell__hd">
+                                        <picker bindchange="bindDegreeGrantStatusChange" value="{{isDegreeGranted}}"
+                                            range="{{degreeGrantStatus}}">
+                                            <view class="weui-select" style="position: relative; ">
+                                                {{degreeGrantStatus[isDegreeGranted]}}</view>
+                                        </picker>
+                                    </view>
+                                </view>
+                            </mp-cells>
+                        </view>
+                    </view>
+                </mp-cell-->
+                <mp-cell class="country" prop="country" style="text-align:left;" title="国家" ext-class="">
+                    <!--input class="a-input" bindinput="bindInputCountry"
+                        style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px"
+                        value="{{country}}" placeholder="请输入学校所在国家，例如: 中国" /-->
+                    <picker bindchange="bindInputCountry"
+                        style="text-align: center; padding: 2px 5px; width: 480rpx; height: 66rpx; border: 1px solid #a1a1a1; border-radius: 5px"
+                        value="{{countryIndex}}" range="{{countryItems}}">
+                        <view class="weui-select">
+                            {{countryItems[countryIndex]}}</view>
+                    </picker>
+                </mp-cell>
+                <mp-cell class="region" prop="region" style="text-align:left;" title="省、州" ext-class="">
+                    <!--input class="a-input" bindinput="bindInputCity"
+                        style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px"
+                        value="{{city}}" placeholder="请输入学校所在国家，例如: 北京" /-->
+                    <picker bindchange="bindInputRegion"
+                        style="text-align: center; padding: 2px 5px; width: 480rpx; height: 66rpx; border: 1px solid #a1a1a1; border-radius: 5px"
+                        value="{{regionIndex}}" range="{{regionItems}}">
+                        <view class="weui-select">
+                            {{regionItems[regionIndex]}}</view>
+                    </picker>
+                </mp-cell>
+                <mp-cell class="edu_sdate" prop="startDate" style="text-align:left;" title="开始日期" ext-class="">
+                    <picker data-field="date" mode="date"
+                        style="text-align: center; padding: 2px 5px; width: 480rpx; height: 66rpx; border: 1px solid #a1a1a1; border-radius: 5px"
+                        value="{{startDate}}" start="1977-09-01" end="2021-07-01" bindchange="bindStartDateChange">
+                        <view class="weui-input"
+                            style="width: 480rpx; height: 64rpx; display: block; box-sizing: border-box">{{startDate}}
+                        </view>
+                    </picker>
+                </mp-cell>
+                <mp-cell class="edu_edate" prop="endDate" style="text-align:left;" title="结束日期" ext-class="">
+                    <picker data-field="date" mode="date"
+                        style="text-align: center; padding: 2px 5px; width: 480rpx; height: 66rpx; border: 1px solid #a1a1a1; border-radius: 5px"
+                        value="{{endDate}}" start="1977-07-01" end="2021-07-01" bindchange="bindEndDateChange">
+                        <view class="weui-input"
+                            style="width: 480rpx; height: 64rpx; display: block; box-sizing: border-box">{{endDate}}
+                        </view>
+                    </picker>
+                </mp-cell>
+                <mp-cell class="university" prop="university" style="text-align:left;" title="学校" ext-class="">
+                    <input class="a-input" bindinput="bindInputUniversity"
+                        style="width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; padding: 2px 5px"
+                        value="{{unversity}}" placeholder="请输入学校简写，例如: 北大" />
+                    <!--view
+                        style="text-align: center; width: 480rpx; height: 64rpx; display: block; box-sizing: border-box">
+                        <button bindtap='chooseImageTap' size='mini'
+                            style="width: 500rpx; height: 64rpx; display: inline-block; box-sizing: border-box; padding: 2px 5px">请上传学校正门照片</button>
+                    </view-->
+                </mp-cell>
+                <mp-cell class="dormitory" prop="dormitory" style="text-align:left;" title="宿舍" ext-class="">
+                    <input class="a-input" bindinput="bindInputDormitory"
+                        style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px"
+                        value="{{dormitory}}" placeholder="例如: 燕园、畅春园、中关新园" />
+                    <!--view style="text-align:center">
+                        <button bindtap='chooseImageTap' size='mini'
+                            style="width: 500rpx; height: 64rpx; display: inline-block; box-sizing: border-box">请上传宿舍照片</button>
+                    </view-->
+                </mp-cell>
+                <mp-cell class="canteen" prop="canteen" style="text-align:left;" title="食堂" ext-class="">
+                    <input class="a-input" bindinput="bindInputCanteen"
+                        style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px"
+                        value="{{canteen}}" placeholder="例如: 农园、学五、畅春园" />
+                    <!--view style="text-align:center">
+                        <button bindtap='chooseImageTap' size='mini'
+                            style="width: 500rpx; height: 64rpx; display: inline-block; box-sizing: border-box; padding: 2px 5px">请上传食堂照片</button>
+                    </view-->
+                </mp-cell>
+                <mp-cell class="academic_building" prop="academic_building" style="text-align:left;" title="教学楼"
+                    ext-class="">
+                    <input class="a-input" bindinput="bindInputAcademicBuilding"
+                        style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px"
+                        value="{{academicBuilding}}" placeholder="例如: 百年讲堂、计算中心、理科一楼" />
+                    <!--view style="text-align:center">
+                        <button bindtap='chooseImageTap' size='mini'
+                            style="width: 500rpx; height: 64rpx; display: inline-block; box-sizing: border-box">请上传学校教学楼照片</button>
+                    </view-->
+                </mp-cell>
+                <mp-cell class="teacher" prop="teacher" style="text-align:left;" title="老师" ext-class="">
+                    <input class="a-input" bindinput="bindInputTeacher" data-field="text"
+                        style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px"
+                        value="{{teacher}}" placeholder="例如: 杨芙清、高文、王阳元" />
+                </mp-cell>
+                <mp-cell prop="major" style="text-align:left;" title="专业" ext-class="">
+                    <input bindinput="bindMajorChange" data-field="text" class="weui-input"
+                        style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px"
+                        placeholder="请输入专业, 例如: 软件" />
+                </mp-cell>
+            </mp-cells>
+            <mp-cells>
+                <mp-cell prop="living_feeling" title="生活感想" ext-class=""
+                    style="width: 336rpx; height: 164rpx; display: inline; box-sizing: content-box">
+                    <textarea name="living_feeling" id="" cols="30" bindinput="onLivingFeelingInput"
+                        style="border: 1px solid #a1a1a1; width: 500rpx; height: 256rpx; border-radius: 5px; display: block; box-sizing: border-box"
+                        placeholder="例如：水土不服，没有朋友" rows="10" maxlength="1260"></textarea>
+                </mp-cell>
+                <mp-cell prop="achievement" title="学习、实习成绩、自豪的事情" ext-class="">
+                    <textarea name="achievement" id="" cols="30" bindinput="onAchievementInput"
+                        style="width: 500rpx; height: 256rpx; border-radius: 5px; border: 1px solid #a1a1a1; display: block; box-sizing: border-box"
+                        placeholder="例如：励志奖学金三年" rows="5" maxlength="1260"></textarea>
+                </mp-cell>
+                <mp-cell prop="love_experience" title="恋爱经历" ext-class="">
+                    <textarea name="love_experience" id="" cols="30" bindinput="onLoveExperienceInput"
+                        style="border: 1px solid #a1a1a1; width: 500rpx; height: 256rpx; border-radius: 5px; display: block; box-sizing: border-box"
+                        placeholder="例如: 没有恋爱经验，天天去图书馆" rows="5" maxlength="1260"></textarea>
+                </mp-cell>
+                <!--view style="text-align:center">
+                    <button bindtap='chooseImageTap' size='mini'
+                        style="width: 480rpx; height: 64rpx; display: block; box-sizing: border-box">请上传学校生活经历照片</button>
+                </view-->
+            </mp-cells>
+            <mp-cells>
+                <view class="image-drag-container">
+                    <movable-area class="movable-area" style="min-height:{{imageWitdh}}px;height:{{areaHeight}}px">
+                        <view class="image-choose-container">
+                            <view class="image-item" style="width:{{imageWitdh}}px;height:{{imageWitdh}}px"
+                                wx:for="{{images}}" wx:for-item="url" wx:key="url" data-url="{{url}}"
+                                data-index="{{index}}" bindlongpress='handleLongTap' bindtouchend='handleTouchEnd'
+                                catchtouchmove='handleTouchMove'>
+                                <image src="{{url}}" mode="aspectFill" bindtap="handlePreview" data-index="{{index}}"
+                                    data-url="{{url}}"></image>
+                                <view class="close" bindtap="handleDelete" data-index="{{index}}">X</view>
+                            </view>
+                            <view class="add-button" style="width: {{imageWitdh}}px; height: {{imageWitdh}}px; position: relative; left: 264rpx; top: 0rpx"
+                                wx:if="{{images.length >= 0 &&images.length < 9}}" bindtap="handleChooseImage">
+                                <view class="item" ><text class="icon add"></text>
+                                <text class="txt">上传照片</text> </view>
+                            </view>
+                            <view style="width:{{imageWitdh}}px" class="image-item image-item-temp"
+                                wx:if="{{images.length%3==1}}"></view>
+                        </view>
+                        <movable-view class="movable-view" style="width:{{imageWitdh}}px;height:{{imageWitdh}}px"
+                            hidden="{{hidden}}" x="{{x}}" y="{{y}}" direction="all" damping="{{5000}}" friction="{{1}}">
+                            <image src="{{currentImg}}" wx:if="{{currentImg.length>0}}"></image>
+                        </movable-view>
+                    </movable-area>
+                    <!--button class="weui-btn" type="primary" bindtap="chooseImageTap">上传图片</button-->
+                </view>
+            </mp-cells>
+        </mp-form>
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="submitForm">发布</button>
+        </view>
+    </view>
+</view>

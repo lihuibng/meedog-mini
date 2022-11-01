@@ -1,0 +1,97 @@
+{
+    "entryPagePath": "pages/auth/login/login",
+    "pages": [
+        "pages/activity/activity/index",
+        "pages/activity/map/index",
+        "pages/activity/add/index",
+       "pages/message/group/index",
+        "pages/user/index/index",
+        "pages/auth/register/register",
+        "pages/auth/auth/auth",
+        "pages/auth/login/login",
+        "pages/auth/reset/reset",
+        "pages/search/index/index",
+        "pages/search/input/input",
+        "pages/search/hot/hot",
+        "pages/search/new/new",
+        "pages/search/rec/rec",
+        "pages/user/share/share",
+        "pages/user/asset_salary/asset_salary",
+        "pages/user/love_history/love_history",
+        "pages/user/other/other",
+        "pages/user/health/health",
+        "pages/user/basic_info/basic_info",
+        "pages/user/education/education",
+        "pages/user/foods/foods",
+        "pages/user/footprint/footprint",
+        "pages/user/music/music",
+        "pages/user/movie/movie",
+        "pages/user/charactor/charactor",
+        "pages/user/lover_standard/lover_standard",
+        "pages/user/customer/customer",
+        "pages/search/city/city",
+        "pages/user/education_list/education_list",
+        "pages/user/evaluate_plan/evaluate_plan",
+        "pages/user/spirit/spirit",
+        "pages/user/book/book",
+        "pages/search/welcome/welcome",
+        "pages/user/movie_list/movie_list",
+        "pages/user/footprint_list/footprint_list",
+        "pages/user/foods_list/foods_list",
+        "pages/map/map_index/map_index",
+        "pages/map/map_detail/map_detail",
+        "pages/user/book_list/book_list",
+        "pages/user/account/account",
+        "pages/user/love_constraint/love_constraint",
+        "pages/user/love_confirmation/love_confirmation",
+        "pages/user/identify/identify",
+        "pages/auth/invite/invite",
+        "pages/message/edit/edit",
+        "pages/message/share/share",
+        "pages/user/detail/index"
+    ],
+    "requiredBackgroundModes": [
+        "audio",
+        "location"
+    ],
+    "permission": {
+        "scope.userLocation": {
+            "desc": "参加活动需要您的位置信息"
+        }
+    },
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "米小狗",
+        "navigationBarTextStyle": "black",
+        "enablePullDownRefresh": true
+    },
+    "tabBar": {
+        "backgroundColor": "#fafafa",
+        "borderStyle": "white",
+        "selectedColor": "#b4282d",
+        "color": "#666",
+        "list": [
+            {
+                "pagePath": "pages/search/index/index",
+                "iconPath": "static/img/search-black.png",
+                "selectedIconPath": "static/img/search-blue.png",
+                "text": "搜索"
+            },
+          
+          
+            {
+                "pagePath": "pages/user/index/index",
+                "iconPath": "static/img/user__black.png",
+                "selectedIconPath": "static/img/user_white.png",
+                "text": "我的"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "downloadFile": 10000
+    },
+    "debug": true,
+    "sitemapLocation": "sitemap.json"
+}

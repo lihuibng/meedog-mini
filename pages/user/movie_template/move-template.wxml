@@ -1,0 +1,7 @@
+<template name="movieTemplate">
+    <view class="movie">
+        <image src="{{imgUrl}}"></image>
+        <text>{{name}}</text>
+        <view>评分<text>{{average}}</text></view>
+    </view>
+</template>

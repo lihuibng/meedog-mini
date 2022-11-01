@@ -1,0 +1,90 @@
+<!--pages/user/account/account.wxml-->
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="container" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="sensitive-userinfo">
+        <mp-form id="form" models="{{formData}}">
+            <view style="clear:both;height:20rpx;background: #eee;width:100%;"></view>
+            <view class="sensitive-home-tit" style="width: 750rpx; height: 64rpx; display: block; box-sizing: border-box">国内账号信息</view>
+            <mp-cells class="accounts">
+                <mp-cell class="qq" prop="qq" style="text-align:left;" title="QQ" ext-class="">
+                    <input class="a-input" bindinput="bindInputQQ"
+                        style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; display: bl; box-sizing: border-box"
+                        value="{{qq}}" placeholder="请输入QQ号" />
+                </mp-cell>
+                <mp-cell class="douban" prop="douban" style="text-align:left;" title="豆瓣" ext-class="">
+                    <input class="a-input" bindinput="bindInputDouban"
+                        style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; box-sizing: border-box; display: bl"
+                        value="{{douban}}" placeholder="请输入豆瓣账号" />
+                </mp-cell>
+                <mp-cell class="zhihu" prop="zhihu" style="text-align:left;" title="知乎" ext-class="">
+                    <input class="a-input" bindinput="bindInputDouban"
+                        style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; display: block; box-sizing: border-box"
+                        value="{{zhihu}}" placeholder="请输入知乎账号" />
+                </mp-cell>
+                <mp-cell class="weibo" prop="weibo" style="text-align:left;" title="微博" ext-class="">
+                    <input class="a-input" bindinput="bindInputWeibo"
+                        style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; display: block; box-sizing: border-box"
+                        value="{{weibo}}" placeholder="请输入微博账号" />
+                </mp-cell>
+                <mp-cell class="douyin" prop="douyin" style="text-align:left;" title="抖音" ext-class="">
+                    <input class="a-input" bindinput="bindInputDouyin"
+                        style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; box-sizing: border-box; display: block"
+                        value="{{douyin}}" placeholder="请输入抖音账号" />
+                </mp-cell>
+                <mp-cell class="kuaishou" prop="kuaishou" style="text-align:left;" title="快手" ext-class="">
+                    <input class="a-input" bindinput="bindInputKuaishou"
+                        style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; box-sizing: border-box; display: bl"
+                        value="{{kuaishou}}" placeholder="请输入快手账号" />
+                </mp-cell>
+                <mp-cell class="bilibili" prop="bilibili" style="text-align:left;" title="B站" ext-class="">
+                    <input class="a-input" bindinput="bindInputKuaishou"
+                        style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; display: bl; box-sizing: border-box"
+                        value="{{bilibili}}" placeholder="请输入B站账号" />
+                </mp-cell>
+                <mp-cell class="maimai" prop="maimai" style="text-align:left;" title="脉脉" ext-class="">
+                    <input class="a-input" bindinput="bindInputMaimai"
+                        style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; box-sizing: border-box; display: block"
+                        value="{{maimai}}" placeholder="请输入脉脉 账号" />
+                </mp-cell>
+            </mp-cells>
+            <view style="clear:both;height:20rpx;background: #eee;width:100%;"></view>
+            <view class="sensitive-foreign-tit" style="width: 750rpx; height: 64rpx; display: block; box-sizing: border-box">国外账号信息</view>
+            <mp-cells class="accounts">
+                <mp-cell class="tiktok" prop="tiktok" style="text-align:left;" title="Tik Tok" ext-class="">
+                    <input class="a-input" bindinput="bindInputTiktok"
+                        style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; display: bl; box-sizing: border-box"
+                        value="{{tiktok}}" placeholder="请输入Tik Tok账号" />
+                </mp-cell>
+                <mp-cell class="youbute" prop="youbute" style="text-align:left;" title="YouTube" ext-class="">
+                    <input class="a-input" bindinput="bindInputYoutube"
+                        style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; box-sizing: border-box; display: block"
+                        value="{{youtube}}" placeholder="请输入YouTube 账号" />
+                </mp-cell>
+                <mp-cell class="facebook" prop="facebook" style="text-align:left;" title="Facebook" ext-class="">
+                    <input class="a-input" bindinput="bindInputFacebook"
+                        style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; display: block; box-sizing: border-box"
+                        value="{{facebook}}" placeholder="请输入Facebook 账号" />
+                </mp-cell>
+                <mp-cell class="instagram" prop="instagram" style="text-align:left;" title="Instagram" ext-class="">
+                    <input class="a-input" bindinput="bindInputInstagram"
+                        style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; box-sizing: border-box; display: block"
+                        value="{{instagram}}" placeholder="请输入Instagram 账号" />
+                </mp-cell>
+                <mp-cell class="twitter" prop="twitter" style="text-align:left;" title="Twitter" ext-class="">
+                    <input class="a-input" bindinput="bindInputTwitter"
+                        style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; display: block; box-sizing: border-box"
+                        value="{{Twitter}}" placeholder="请输入Twitter 账号" />
+                </mp-cell>
+
+                <mp-cell class="linkedin" prop="linkedin" style="text-align:left;" title="LinkedIn" ext-class="">
+                    <input class="a-input" bindinput="bindInputLinkedin"
+                        style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; display: bl; box-sizing: border-box"
+                        value="{{linkedin}}" placeholder="请输入LinkedIn 账号" />
+                </mp-cell>
+            </mp-cells>
+        </mp-form>
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+        </view>
+    </view>
+</view>

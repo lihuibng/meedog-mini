@@ -1,0 +1,10 @@
+<!--pages/search/index.wxml-->
+<view class="container">
+	<!--商品搜索-->
+	<view class="search">
+		<navigator url="/pages/search/input" class="input">
+			<image class="icon"></image>
+			<text class="txt">{{candidateCount}}人在找对象</text>
+		</navigator>
+	</view>
+</view>

@@ -1,0 +1,48 @@
+/* pages/user/account/account.wxss */
+/* pages/user/education/education.wxss */
+/* pages/user/sensitive_info/sensitive_info.wxss */
+
+.container {
+    background: #ffffff;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.sensitive-userinfo {
+    width: 100%;
+    background: rgb(255, 255, 255);
+}
+
+.sensitive-userinfo .sensitive-tit {
+    width: 100%;
+    background: rgb(255, 255, 255);
+    font: italic bold 12px/30px arial, sans-serif;
+    font-size: small;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.sensitive-userinfo .sensitive-home-tit {
+    width: 100%;
+    background: rgb(255, 255, 255);
+    font: italic bold 12px/30px arial, sans-serif;
+    font-size: small;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.sensitive-userinfo .sensitive-foreign-tit {
+    width: 100%;
+    background: rgb(255, 255, 255);
+    font: italic bold 12px/30px arial, sans-serif;
+    font-size: small;
+    text-align: center;
+    margin: 0 auto;
+}
+
+mp-form {
+    width: 100%;
+    background: rgb(255, 255, 255);
+}

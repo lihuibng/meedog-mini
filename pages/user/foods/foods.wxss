@@ -1,0 +1,4 @@
+/* pages/user/foods/foods.wxss */
+.section__ctn {
+    text-align: center;
+}

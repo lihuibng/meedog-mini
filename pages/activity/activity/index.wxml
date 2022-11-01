@@ -1,0 +1,32 @@
+<view class="share">
+    <view wx:for="{{list}}">
+        <view class="name-time">
+            <view>{{item.name}}</view>
+            <view>{{item.start}}--{{item.end}}</view>
+        </view>
+        <swiper class="share-content" indicator-dots="true" indicator-active-color="#fff" autoplay circular>
+            <swiper-item wx:for="{{item.picIds}}" wx:for-item="items">
+                <image mode="aspectFill" bindtap="bindSwiper" data-url="{{items}}" src="{{items}}" />
+            </swiper-item>
+        </swiper>
+        <view class="btn" style="margin-top:8px" catchtap="">
+            <view class="btn-item">
+                <button open-type="share" class="share-btn" catchtap="shareHandle" data-item="{{item}}" data-index="{{index}}" data-id="{{item.id}}">
+                    <image class="like" src="../../../static/images/share.png"></image>
+                    <text class="num">{{item.forwardCount||0}}</text>
+                </button>
+            </view>
+            <view class="btn-item" catchtap="toComment" data-item="{{item}}">
+                <image class="like" src="../../../static/images/comment.png"></image>
+                <view class="num">{{item.commentCount}}</view>
+            </view>
+            <view class="btn-item">
+                <image class="like {{index==current?'active':''}}" id="like" catchtap="likeHandle" data-shareId="{{item.id}}" data-index="{{index}}" src="{{item.likes.like?'../../../static/images/like.png':'../../../static/images/unlike.png'}}">
+                </image>
+                <view class="num">{{item.likeCount}}</view>
+            </view>
+        </view>
+        <view class="box-line"></view>
+    </view>
+    <view class="ball" bindtap="toAdd">+</view>
+</view>

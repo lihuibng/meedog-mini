@@ -1,0 +1,34 @@
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page_bd">
+        <mp-form id="form" models="{{formData}}">
+            <view class="info">
+                <view class="item-hd">
+                    <label>
+						邮箱
+					</label>
+                </view>
+                <view class="item">
+                    <input class="item" bindinput="bindEmailInput" placeholder="请输入邮箱" />
+                </view>
+            </view>
+            <view class="info">
+                <view class="item-hd">
+                    <label>
+						密码
+					</label>
+                </view>
+                <view class="item">
+                    <input class="item" password bindinput="bindPasswordInput" placeholder="请输入密码" />
+                </view>
+            </view>
+        </mp-form>
+    </view>
+    <view class="help">
+        <navigator url="../../auth/register/register" class="register_link">注册</navigator>
+        <navigator url="../../auth/reset/reset" class="reset_link">重置密码</navigator>
+    </view>
+    <view class="btn-area">
+        <button class="btn" type="primary" bindtap="startLogin">登录</button>
+    </view>
+</view>

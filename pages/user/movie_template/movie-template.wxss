@@ -1,0 +1,9 @@
+.movie image {
+    width: 200rpx;
+    height: 270rpx;
+}
+
+.movie {
+    display: flex;
+    flex-direction: column;
+}

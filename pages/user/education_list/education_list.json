@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mp-toptips": "../../../component/weui/toptips/toptips",
+    "mp-cells": "../../../component/weui/cells/cells",
+    "mp-cell": "../../../component/weui/cell/cell",
+    "mp-form": "../../../component/weui/form/form"
+  },
+  "navigationBarTitleText": "求学之旅"
+}

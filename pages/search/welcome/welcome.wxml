@@ -1,0 +1,14 @@
+<!--pages/search/welcome/welcome.wxml-->
+<view class='head'>
+    <image src='../../../static/img/WechatIMG4.png'></image>
+    <view class="page-section">
+        <view class="rich-text-wrp">
+            <rich-text nodes="{{missionHtml}}" bindtap=""></rich-text>
+        </view>
+    </view>
+    <view class="page-section">
+        <view class="rich-text-wrp">
+            <rich-text nodes="{{welcomeHtml}}" bindtap="JumpTo"></rich-text>
+        </view>
+    </view>
+</view>

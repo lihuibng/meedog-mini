@@ -1,0 +1,37 @@
+/* pages/user/love_confirmation/love_confirmation.wxss */
+/* pages/user/love_constraint/love_constraint.wxss */
+/* pages/user/health/health.wxss */
+/* pages/user/love_history/love_history.wxss */
+/* pages/user/account/account.wxss */
+/* pages/user/education/education.wxss */
+/* pages/user/sensitive_info/sensitive_info.wxss */
+
+.container {
+    background: #ffffff;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.love_confirmation {
+    width: 100%;
+    background: rgb(255, 255, 255);
+}
+
+.love_confirmation .love_confirmation_tit {
+    width: 100%;
+    background: rgb(255, 255, 255);
+    font: italic bold 12px/30px arial,sans-serif;
+    font-size: small;
+    text-align: center;
+    margin: 0 auto;
+}
+.love_confirmation .upload_button {
+    width: 100%;
+    background: rgb(255, 255, 255);
+    font: normal;
+    font-size: small;
+    text-align: center;
+    margin: 0 auto;
+}

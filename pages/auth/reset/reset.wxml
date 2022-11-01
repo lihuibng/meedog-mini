@@ -1,0 +1,51 @@
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+	<view class="page_bd">
+		<mp-form id="form" models="{{formData}}">
+			<view class="info">
+				<view class="item-hd">
+					<label>
+						邮箱
+					</label>
+				</view>
+				<view class="item">
+					<input class="item" bindinput="bindEmailInput" placeholder="请输入邮箱" />
+				</view>
+			</view>
+			<view class="info">
+				<view class="item-hd">
+					<label>
+						新密码
+					</label>
+				</view>
+				<view class="item">
+					<input class="item" password bindinput="bindPasswordInput" placeholder="请输入新密码" />
+				</view>
+			</view>
+			<view class="info">
+				<view class="item-hd">
+					<label>
+						确认新密码
+					</label>
+				</view>
+				<view class="item">
+					<input class="item" password bindinput="confirmPasswordInput" placeholder="请确认新密码" />
+				</view>
+			</view>
+			<!--view class="info">
+				<view class="item-hd">
+					<label>
+						验证码
+					</label>
+				</view>
+				<view class="item">
+					<input class="item" password bindinput="bindAuthCodeInput" placeholder="请输入验证码" />
+				</view>
+			</view-->
+		</mp-form>
+	</view>
+
+	<view class="btn-area">
+		<button class="btn" type="primary" bindtap="startNext">下一步</button>
+	</view>
+</view>

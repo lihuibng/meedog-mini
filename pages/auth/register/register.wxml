@@ -1,0 +1,91 @@
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__bd">
+        <mp-form id="form" models="{{formData}}">
+            <view class="info">
+                <view class="item-hd">
+                    <label>
+                        邮箱
+                    </label>
+                </view>
+                <view class="item">
+                    <input class="item" bindinput="bindEmailInput" placeholder="请输入邮箱" />
+                </view>
+            </view>
+
+            <view class="info" style="flex-direction:row;">
+                <view class="item-hd">
+                    <label>
+                        真实名字
+                    </label>
+                </view>
+                <view class="item">
+                    <input class="item" bindinput="bindRealnameInput" placeholder="如贾玲，请输入 玲" />
+                </view>
+            </view>
+
+            <view class="info" style="flex-direction:row;">
+                <view class="item-hd"><label>
+                        密码
+                    </label>
+                </view>
+
+                <view class="item">
+                    <input class="item" password bindinput="bindPasswordInput" placeholder="请输入密码" />
+                </view>
+            </view>
+            <view class="info" style="flex-direction:row;">
+                <view class="item-hd"><label>
+                        邀请码
+                    </label>
+                </view>
+
+                <view class="item">
+                    <input class="item" bindinput="bindAuthCodeInput" placeholder="请输入邀请码" />
+                </view>
+            </view>
+            <view class="info" style="flex-direction:row;">
+                <view class="item-hd">
+                    <label>
+                        真实生日
+                    </label>
+                </view>
+                <view class="item">
+
+                    <picker data-field="date" mode="date" style="text-align: left; padding: 2px 5px; width: 480rpx; height: 66rpx; border-radius: 5px" value="{{readlBirthday}}" start="1977-07-01" end="2021-07-01" bindchange="bindRealBirthdayInput">
+                        <view class="weui-input" placeholder="请输入真实生日" style="width: 480rpx; height: 64rpx; display: block; box-sizing: border-box">
+                            {{realBirthday}}
+                        </view>
+                    </picker>
+                </view>
+            </view>
+            <view class="info" style="flex-direction:row;">
+                <view class="item-hd"><label>
+                        身份证前六位
+                    </label>
+                </view>
+                <view class="item">
+                    <input class="item" bindinput="bindIdCard6thInput" placeholder="请输入身份证前六位" />
+                </view>
+            </view>
+            <view class="info" style="flex-direction:row;">
+                <view class="item-hd"><label>
+                        身份证生日
+                    </label>
+                </view>
+                <view class="item">
+
+                    <picker data-field="date" mode="date" style="text-align: left; padding: 2px 5px; width: 480rpx; height: 66rpx; border-radius: 5px" value="{{idCardBirthday}}" start="1950-07-01" end="2021-07-01" bindchange="bindIdCardBirthdayInput">
+                        <view class="weui-input" style="width: 480rpx; height: 64rpx; display: block; box-sizing: border-box">
+                            {{idCardBirthday}}
+                        </view>
+                    </picker>
+                </view>
+            </view>
+            <view class="btn-area">
+                <button class="btn" type="primary" bindtap="submitForm">注册</button>
+            </view>
+        </mp-form>
+    </view>
+</view>

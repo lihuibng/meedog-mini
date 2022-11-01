@@ -1,0 +1,79 @@
+/* pages/user/education_list/education_list.wxss */
+page {
+    background: #f8f8f8;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    background: #f8f8f8;
+    min-height: 100%;
+    overflow-x: hidden;
+    padding-top: 10rpx;
+    position: relative;
+}
+
+.edu_exprience {
+    width: 100%;
+    background: #f8f8f8;
+    min-height: 100%;
+    overflow-x: hidden;
+    padding-top: 10rpx;
+}
+
+.eduExperiences {
+    width: 100%;
+    background: #f8f8f8;
+    min-height: 100%;
+    overflow-x: hidden;
+    padding-top: 10rpx;
+}
+
+.eduExperience {
+    text-align: center;
+    border: 5px solid rgb(255, 255, 255);
+}
+
+.add_edu_expr {
+    background: #f8f8f8;
+    min-height: 100%;
+    overflow-x: hidden;
+    padding-top: 1rpx;
+}
+
+.add_edu_expr .item {
+    float: left;
+    width: 100%;
+    height: 144px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.add_edu_expr .item .a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.add_edu_expr .icon {
+    margin: 0 auto;
+    display: block;
+    height: 52.803rpx;
+    width: 52.803rpx;
+    margin-bottom: 16rpx;
+}
+
+.add_edu_expr .icon.add {
+    background: url(http://XXXXXX:8082/icon/img/plus_blue.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.no-more {
+    text-align: center;
+    font-size: 28rpx;
+    margin: 20rpx 0 30rpx 0;
+    color: #999;
+}

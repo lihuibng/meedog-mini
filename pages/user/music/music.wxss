@@ -1,0 +1,60 @@
+/* pages/user/music/music.wxss */
+/*https://www.kancloud.cn/lixu/wechat_mp/796080*/
+/*.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100rpx;
+}*/
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 48rpx;
+}
+
+.banner {
+    width: 500rpx;
+    height: 500rpx;
+    border-radius: 10%;
+}
+
+.play {
+    width: 200rpx;
+    height: 200rpx;
+    /*position: absolute;*/
+    top: 27%;
+}
+
+.text {
+    margin-top: 100rpx;
+    line-height: 80rpx;
+    color: gray;
+    font-size: 35rpx;
+    text-align: center;
+}
+
+.rotate {
+    animation: rotate 12s linear infinite
+}
+
+.description {
+    margin-top: 120rpx;
+    line-height: 80rpx;
+    color: rgb(238, 157, 8);
+    font-size: 20rpx;
+    /*text-align: center;*/
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}

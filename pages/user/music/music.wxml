@@ -1,0 +1,11 @@
+<!--pages/user/music/music.wxml-->
+<view class="container">
+    <view style="clear:both;height:20rpx;background: #eee;width:100%;"></view>
+    <view class="music_list" wx:for="{{ musicList }}">
+        <view><audio poster="{{item.poster}}" name="{{item.name}}" author="{{item.author}}" src="{{item.src}}"
+                id="myAudio" controls loop></audio>
+        </view>
+        <view> <text class="description">{{item.desc}}</text></view>
+        <view style="clear:both;height:20rpx;background: #eee;width:100%;"></view>
+    </view>
+</view>

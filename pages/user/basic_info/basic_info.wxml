@@ -1,0 +1,270 @@
+<!--pages/user/basic_info/basic_info.wxml-->
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="container" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="basic-userinfo" wx:if="{{modify == true}}">
+        <mp-form id="form" models="{{formData}}">
+            <mp-cells class="basic">
+                <view class="weui-flex">
+                    <view class="weui-flex__item">
+                        <mp-cells style="text-align:center;" title="性别">
+                            <view class="weui-cell weui-cell_select">
+                                <view class="weui-cell__hd" style="text-align:center;padding:0px 16px">
+                                    <picker bindchange="bindGenderChange" value="{{genderIndex}}" range="{{genders}}">
+                                        <view class="weui-select"
+                                            style="width: 200rpx; height: 90rpx; display: block; box-sizing: border-box">
+                                            {{genders[genderIndex]}}</view>
+                                    </picker>
+                                </view>
+                            </view>
+                        </mp-cells>
+                    </view>
+
+                    <!--view class="weui-flex__item">
+                        <mp-cells style="text-align:center;" title="生肖">
+                            <view class="weui-cell weui-cell_select">
+                                <view class="weui-cell__hd" style="text-align:center;padding:0px 16px">
+                                    <picker bindchange="bindZodiacChange" value="{{zodiacIndex}}"
+                                        range="{{zodiacItems}}">
+                                        <view class="weui-select" style="width: 200rpx; height: 90rpx; display: block; box-sizing: border-box">{{zodiacItems[zodiacIndex]}}</view>
+                                    </picker>
+                                </view>
+                            </view>
+                        </mp-cells>
+                    </view>
+                    <view class="weui-flex__item">
+                        <mp-cells style="text-align:center;" title="星座">
+                            <view class="weui-cell weui-cell_select">
+                                <view class="weui-cell__hd" style="text-align:center;padding:0px 16px">
+                                    <picker bindchange="bindConstellationChange" value="{{constellationIndex}}"
+                                        range="{{constellationItems}}">
+                                        <view class="weui-select" style="width: 200rpx; height: 90rpx; display: block; box-sizing: border-box">{{constellationItems[constellationIndex]}}</view>
+                                    </picker>
+                                </view>
+                            </view>
+                        </mp-cells>
+                    </view>
+                </view>
+                <view class="weui-flex">
+                    <view class="weui-flex__item">
+                        <mp-cells style="text-align:center;" title="出生地">
+                            <view class="weui-cell weui-cell_select">
+                                <view class="weui-cell__hd" style="text-align:center;padding:0px 16px">
+                                    <picker bindchange="bindBirthplaceChange" value="{{birthplaceIndex}}"
+                                        range="{{provinceItems}}">
+                                        <view class="weui-select" style="width: 200rpx; height: 90rpx; display: block; box-sizing: border-box">{{provinceItems[birthplaceIndex]}}</view>
+                                    </picker>
+                                </view>
+                            </view>
+                        </mp-cells>
+                    </view-->
+                    <view class="weui-flex__item">
+                        <mp-cells style="text-align:center;" title="户籍地">
+                            <view class="weui-cell weui-cell_select">
+                                <view class="weui-cell__hd" style="text-align:center;padding:0px 16px">
+                                    <picker mode="multiSelector" bindchange="bindRegisteredMultiChange"
+                                        bindcolumnchange="bindRegisteredMultiPickerColumnChange"
+                                        value="{{registeredIndex}}" range="{{registeredArray}}">
+                                        <view class="weui-select"
+                                            style="width: 200rpx; height: 90rpx; display: block; box-sizing: border-box">
+                                            {{registeredArray[1][registeredIndex[1]]}}
+                                        </view>
+                                    </picker>
+                                </view>
+                            </view>
+                        </mp-cells>
+                    </view>
+                    <view class="weui-flex__item">
+                        <mp-cells style="text-align:center;" title="工作地">
+                            <view class="weui-cell weui-cell_select">
+                                <view class="weui-cell__hd" style="text-align:center;padding:0px 16px">
+                                    <!--picker bindchange="bindResidenceChange" value="{{residenceIndex}}"
+                                        range="{{provinceItems}}">
+                                        <view class="weui-select"
+                                            style="position: relative; left: 0rpx; top: 0rpx; width: 200rpx; height: 90rpx; display: block; box-sizing: border-box">
+                                            {{provinceItems[residenceIndex]}}</view>
+                                    </picker-->
+                                    <picker mode="multiSelector" bindchange="bindResidenceMultiChange"
+                                        bindcolumnchange="bindResidenceMultiPickerColumnChange"
+                                        value="{{residenceIndex}}" range="{{residenceArray}}">
+                                        <view class="weui-select"
+                                            style="width: 200rpx; height: 90rpx; display: block; box-sizing: border-box">
+                                            {{residenceArray[1][residenceIndex[1]]}}
+                                        </view>
+                                    </picker>
+                                </view>
+                            </view>
+                        </mp-cells>
+                    </view>
+                </view>
+            </mp-cells>
+            <mp-cells class="bodyinfo">
+                <mp-cell prop="marriage" style="text-align:center;" title="婚姻" ext-class="">
+
+
+                    <picker bindchange="bindMarriageChange" value="{{marriageIndex}}" range="{{marriages}}">
+                        <view class="weui-select"
+                            style="height: 80rpx; text-align: center; border: 1px solid #a1a1a1; border-radius: 5px; width: 480rpx; display: bl; box-sizing: border-box;">
+                            {{marriages[marriageIndex]}}</view>
+                    </picker>
+
+                </mp-cell>
+                <mp-cell prop="nation" style="text-align:center;" title="民族" ext-class="">
+                    <input bindinput="bindNationChange" class="weui-input"
+                        style="height: 64rpx; text-align: center; border: 1px solid #a1a1a1; border-radius: 5px; width: 480rpx; display: block; box-sizing: border-box"
+                        placeholder="汉" />
+                </mp-cell>
+                <mp-cell prop="height" style="text-align:center;" title="身高" ext-class="">
+                    <input bindinput="bindHeightChange" class="weui-input"
+                        style="height: 64rpx; text-align: center; border: 1px solid #a1a1a1; border-radius: 5px; width: 480rpx; display: bl; box-sizing: border-box"
+                        placeholder="身高cm" />
+                </mp-cell>
+                <mp-cell prop="weight" style="text-align:center;" title="体重" ext-class="">
+                    <input bindinput="bindWeightChange" class="weui-input"
+                        style="height: 64rpx; text-align: center; border: 1px solid #a1a1a1; border-radius: 5px; width: 480rpx; display: bl; box-sizing: border-box"
+                        placeholder="体重kg" />
+                </mp-cell>
+                <mp-cell show-error prop="faceValue" style="text-align:center;" title="颜值" ext-class="">
+                    <input bindinput="bindFaceChange" class="weui-input"
+                        style="height: 64rpx; text-align: center; border: 1px solid #a1a1a1; border-radius: 5px; width: 480rpx; display: bl; box-sizing: border-box"
+                        placeholder="1-10分自评" />
+                </mp-cell>
+            </mp-cells>
+            <mp-cells class="softinfo">
+                <mp-cell prop="sexual" style="text-align:center;" title="性取向" ext-class="">
+                    <picker bindchange="bindSexualChange" value="{{sexualIndex}}" range="{{sexualItems}}">
+                        <view class="weui-select"
+                            style="height: 80rpx; text-align: center; border: 1px solid #a1a1a1; border-radius: 5px; width: 480rpx; display: bl; box-sizing: border-box">
+                            {{sexualItems[sexualIndex]}}</view>
+                    </picker>
+                </mp-cell>
+                <mp-cell prop="sexualOrientationDesc" style="text-align:left;" title="性取向补充" ext-class="">
+                    <input bindinput="bindSexualDescChange" class="weui-input"
+                        style="height: 64rpx; text-align: center; border: 1px solid #a1a1a1; border-radius: 5px; width: 480rpx; display: block; box-sizing: border-box"
+                        placeholder="例如: 丁克，结不结婚，要不要娃" />
+                </mp-cell>
+                <mp-cell show-error prop="industry" style="text-align:center;" title="从事行业" ext-class="">
+                    <input bindinput="bindIndustryChange" class="weui-input"
+                        style="height: 64rpx; text-align: center; border: 1px solid #a1a1a1; border-radius: 5px; width: 480rpx; display: block; box-sizing: border-box"
+                        placeholder="例如: 政府、互联网" />
+                </mp-cell>
+                <mp-cell show-error prop="jobType" style="text-align:center;" title="工作职务" ext-class="">
+                    <input bindinput="bindJobTypeChange" class="weui-input"
+                        style="height: 64rpx; text-align: center; border: 1px solid #a1a1a1; border-radius: 5px; width: 480rpx; display: block; box-sizing: border-box"
+                        placeholder="例如:公务员、程序员" />
+                </mp-cell>
+                <!--mp-cell show-error prop="life_photo" style="text-align:center;" title="生活照" ext-class="">
+                    <button bindtap='chooseImageTap'
+                        style="width: 480rpx; height: 64rpx; display: block; box-sizing: border-box">上传生活照</button>
+                    <image src="{{imgs[0]}}" bindtap="preview" data-src="{{imgs[0]}}"></image>
+                </mp-cell-->
+                <mp-cell prop="jobProof" title="请一句话证明自己的职业" ext-class="">
+                    <textarea name="job_proof" id="" cols="20" bindinput="bindJobProofChange"
+                        style="width: 480rpx; border: 1px solid #a1a1a1; border-radius: 5px; display: block; box-sizing: border-box"
+                        placeholder="例如: PHP是世界上最好的语言！！！" rows="10" maxlength="1260"></textarea>
+                </mp-cell>
+                <mp-cell prop="question" title="给同行提一个专业问题" ext-class="">
+                    <textarea name="job_question" id="" cols="20" bindinput="bindJobQuestionChange"
+                        style="width: 480rpx; border: 1px solid #a1a1a1; border-radius: 5px; display: block; box-sizing: border-box"
+                        placeholder="例如: 常用开发工具都有哪些？" rows="10" maxlength="1260"></textarea>
+                </mp-cell>
+            </mp-cells>
+        
+        <view class="image-drag-container">
+            <movable-area class="movable-area" style="min-height:{{imageWitdh}}px;height:{{areaHeight}}px">
+                <view class="image-choose-container">
+                    <view class="image-item" style="width:{{imageWitdh}}px;height:{{imageWitdh}}px" wx:for="{{images}}"
+                        wx:for-item="url" wx:key="url" data-url="{{url}}" data-index="{{index}}"
+                        bindlongpress='handleLongTap' bindtouchend='handleTouchEnd' catchtouchmove='handleTouchMove'>
+                        <image src="{{url}}" mode="aspectFill" bindtap="handlePreview" data-index="{{index}}"
+                            data-url="{{url}}"></image>
+                        <view class="close" bindtap="handleDelete" data-index="{{index}}">X</view>
+                    </view>
+                    <view class="add-button" style="width: {{imageWitdh}}px; height: {{imageWitdh}}px; position: relative; left: 264rpx; top: 0rpx"
+                                wx:if="{{images.length >= 0 &&images.length < 9}}" bindtap="handleChooseImage">
+                                <view class="item" ><text class="icon add"></text>
+                                <text class="txt">上传照片</text> </view>
+                            </view>
+                    <view style="width:{{imageWitdh}}px" class="image-item image-item-temp"
+                        wx:if="{{images.length%3==1}}"></view>
+                </view>
+                <movable-view class="movable-view" style="width:{{imageWitdh}}px;height:{{imageWitdh}}px"
+                    hidden="{{hidden}}" x="{{x}}" y="{{y}}" direction="all" damping="{{5000}}" friction="{{1}}">
+                    <image src="{{currentImg}}" wx:if="{{currentImg.length>0}}"></image>
+                </movable-view>
+            </movable-area>
+            <!--button class="weui-btn" type="primary" bindtap="chooseImageTap">上传图片</button-->
+        </view>
+    </mp-form>
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="submitForm">发布</button>
+        </view>
+    </view>
+    <view class="basic-userinfo" wx:elif="{{modify == false}}">
+        <mp-form id="form" models="{{formData}}">
+            <view class="images" style="width:100%;display:flex;">
+                <!--image src="{{item}}" mode="aspectFill"></image-->
+                <swiper class="swiper1" indicator-dots="true" indicator-active-color="#fff" autoplay circular>
+                    <swiper-item wx:for="{{downPicPaths}}" wx:key="id">
+                        <image mode="aspectFill" bindtap="bindSwiper" data-url="{{item}}" src="{{item}}" />
+                    </swiper-item>
+                </swiper>
+            </view>
+            <mp-cells class="basic">
+                <view class="weui-flex">
+                    <view class="weui-flex__item">
+                        <mp-cells style="text-align:center;" title="生肖">
+                            <rich-text>{{zodiacs[zodiacIndex]}}</rich-text>
+                        </mp-cells>
+                    </view>
+                    <view class="weui-flex__item">
+                        <mp-cells style="text-align:center; " title="星座">
+                            <rich-text>{{constellations[constellationIndex]}}</rich-text>
+                        </mp-cells>
+                    </view>
+
+                    <view class="weui-flex__item">
+                        <mp-cells style="text-align:center;" title="户籍地">
+                            <rich-text>{{registeredArray[1][registeredIndex[1]]}}</rich-text>
+                        </mp-cells>
+                    </view>
+                </view>
+            </mp-cells>
+            <mp-cells class="bodyinfo">
+                <mp-cell prop="marriage" style="text-align:center;" title="婚姻" ext-class="">
+                    <rich-text> {{marriages[marriageIndex]}}</rich-text>
+                </mp-cell>
+                <mp-cell prop="nation" style="text-align:center;" title="民族" ext-class="">
+                    <rich-text> {{nation}}</rich-text>
+                </mp-cell>
+                <mp-cell prop="height" style="text-align:center;" title="身高" ext-class="">
+                    <rich-text>{{height}}</rich-text>
+                </mp-cell>
+                <mp-cell prop="weight" style="text-align:center;" title="体重" ext-class="">
+                    <rich-text>{{weight}}</rich-text>
+                </mp-cell>
+                <mp-cell show-error prop="faceValue" style="text-align:center;" title="颜值" ext-class="">
+                    <rich-text>{{facialAttractiveness}}</rich-text>
+                </mp-cell>
+            </mp-cells>
+            <mp-cells class="softinfo">
+                <mp-cell prop="sexual" style="text-align:center;" title="性取向" ext-class="">
+                    <rich-text>{{sexualItems[sexualIndex]}}</rich-text>
+                </mp-cell>
+                <mp-cell prop="sexualOrientationDesc" style="text-align:center;" title="性取向补充" ext-class="">
+                    <rich-text>{{sexualDesc}}</rich-text>
+                </mp-cell>
+                <mp-cell show-error prop="industry" style="text-align:center;" title="从事行业" ext-class="">
+                    <rich-text>{{industry}}</rich-text>
+                </mp-cell>
+                <mp-cell show-error prop="jobType" style="text-align:center;" title="工作职务" ext-class="">
+                    <rich-text>{{jobType}}</rich-text>
+                </mp-cell>
+                
+            </mp-cells>
+        </mp-form>
+       
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="submitChange">修改</button>
+        </view>
+    </view>
+</view>

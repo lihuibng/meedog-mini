@@ -1,0 +1,37 @@
+<view class="page">
+    <view class="container">
+        <view class="invitations">
+            <view class="invitation" wx:for="{{ invitations }}">
+                <view class="info">
+                    <view class="item-hd">
+                        <label>
+                            邮箱：
+                        </label>
+                    </view>
+                    <view class="item">
+                        <text> {{ item.email }}</text>
+                    </view>
+                </view>
+                <view class="info">
+                    <view class="item-hd">
+                        <label>
+                            邀请码:
+                        </label>
+                    </view>
+                    <view class="item">
+                        <text> {{ item.authCode }}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="invite" style="margin:0 auto;text-align:center;">
+            <view class="item" style="width: 746rpx; height: 144rpx; display: block; box-sizing: border-box">
+                <!--navigator url="../../pages/auth/invite/invite" class="a"-->
+                <navigator url="../../auth/invite/invite">
+                    <text class="icon add"></text>
+                    <text class="txt">邀请好友</text>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,13 @@
+<!--pages/user/foods/foods.wxml-->
+<view class="container">
+	<button bindtap='chooseImageTap'>上传图片</button>
+	<button bindtap='bindDownloadImage'>获取图片</button>
+	<view class="page__bd">
+		<view class="section section_gap">
+
+			<view class="section__ctn">
+				<image style="width: 200px; height: 200px; background-color: #eeeeee;" src="{{src}}"></image>
+			</view>
+		</view>
+	</view>
+</view>

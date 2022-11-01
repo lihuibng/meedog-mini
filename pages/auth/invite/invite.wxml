@@ -1,0 +1,23 @@
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__bd">
+        <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+            <view class="info">
+                <view class="item-none">
+                </view>
+                <view class="item-hd">
+                    <input style="width: 450rpx; height: 96rpx; display: block; box-sizing: border-box; padding-left: 200rpx; text-align: right" class="item" bindinput="bindEmailInput" placeholder="请输入邮箱" />
+                </view>
+                <view class="item">
+                    <picker bindchange="bindEmailChange" value="{{emailIndex}}" range="{{Emails}}">
+                        <view class="weui-select" style="width: 240rpx; height: 96rpx; display: block; box-sizing: border-box; position: relative">
+                            @{{Emails[emailIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+        </mp-form>
+        <view class="btn-area">
+            <button class="btn" type="primary" bindtap="submitForm">邀请朋友</button>
+        </view>
+    </view>
+</view>

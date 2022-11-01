@@ -1,0 +1,12 @@
+<!--component/zyslider.wxml-->
+<!--component/zyslider.wxml-->
+
+<view class="container {{hideOption}}" style="position: relative; width: 750rpx; height: 48rpx; display: block; box-sizing: border-box"> 
+<view class="slider-item min" style="transform: scale(0.7,0.7);left:{{leftValue}}rpx;background-color:{{blockColor}};" catchtouchmove="_minMove"></view>
+<view class="slider-item max" style="transform: scale(0.7,0.7);left:{{rightValue}}rpx;background-color:{{blockColor}};" catchtouchmove="_maxMove"></view>
+
+<view class="slider-body left" style="transform: scale(0.6,0.6);left:{{sliderLength}}rpx; width:{{leftValue}}rpx;background-color:{{backgroundColor}};"></view>
+<view class="slider-body body" style="left:{{leftValue}}rpx; width:{{rightValue-leftValue}}rpx;background-color:{{selectedColor}};"></view>
+<view class="slider-body right" style="left:{{rightValue}}rpx; width:{{totalLength - rightValue}}rpx;background-color:{{backgroundColor}};"></view>
+<slot></slot>
+</view>

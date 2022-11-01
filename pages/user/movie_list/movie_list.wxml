@@ -1,0 +1,8 @@
+<!--pages/user/movie_list/movie_list.wxml-->
+<import src="../../user/movie_template/movie_template"></import>
+<!--pages/user/education_list/education_list.wxml-->
+<view class="container">
+	<view class="edu_exprience">
+		<template is="movieTemplate" data="{{...item}}"> </template>
+	</view>
+</view>

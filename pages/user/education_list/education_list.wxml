@@ -1,0 +1,62 @@
+<!--pages/user/education_list/education_list.wxml-->
+<view class="container">
+	<view class="edu_exprience">
+		<view class="eduExperiences" wx:for="{{ eduExprList }}">
+			<view class="eduExperience" style="border: 1px solidblue ;">
+				<view class="weui-flex">
+					<view class="weui-flex__item">
+						<view style="line-height: 50px; text-align: center;">
+							{{item.start}}</view>
+					</view>
+					<view class="weui-flex__item">
+						<view class="degreeName" style="line-height: 50px; text-align: center;">-></view>
+					</view>
+					<view class="weui-flex__item">
+						<view style="line-height: 50px; text-align: center;">
+							{{item.end}}</view>
+					</view>
+				</view>
+				<view class="weui-flex">
+					<view class="weui-flex__item">
+						<view wx:if="{{item.school != null && item.school != '' }}">
+							<view style="line-height: 50px; text-align: center;">
+								{{item.school}}</view>
+						</view>
+						<view wx:else>
+							<view style="line-height: 50px; text-align: center;">
+								家里蹲大学</view>
+						</view>
+					</view>
+					<view class="weui-flex__item">
+						<view wx:if="{{item.major != null && item.major != '' }}">
+							<view style="line-height: 50px; text-align: center;">
+								{{item.major}}</view>
+						</view>
+						<view wx:else>
+							<view style="line-height: 50px; text-align: center;">
+								地球拯救专业</view>
+						</view>
+					</view>
+					<view class="weui-flex__item">
+						<view wx:if="{{degreeItems[item.degree] != null && degreeItems[item.degree] != '' }}">
+							<view style="line-height: 50px; text-align: center;" class="degreeName">
+								{{degreeItems[item.degree]}}</view>
+						</view>
+						<view wx:else>
+							<view style="line-height: 50px; text-align: center;">
+								博士不后</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="add_edu_expr" style="margin:0 auto;text-align:center;">
+			<view class="item" style="width: 746rpx; height: 144rpx; display: block; box-sizing: border-box">
+				<navigator url="../../user/education/education" class="a" style="width: 744rpx; height: 144rpx; display: flex; box-sizing: border-box">
+					<text class="icon add"></text>
+					<text class="txt">学习经历</text>
+				</navigator>
+			</view>
+		</view>
+	</view>
+</view>

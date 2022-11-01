@@ -1,0 +1,31 @@
+<!--pages/user/identify/identify.wxml-->
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="container" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="sensitive-userinfo">
+        <mp-form id="form" models="{{formData}}">
+            <view class="sensitive-tit">身份认证</view>
+            <mp-cells class="sensitive">
+                <mp-cell class="family_name" prop="family_name" style="text-align:left;" title="姓氏" ext-class="">
+                    <input class="a-input" bindinput="bindInputFamilyName"
+                        style="padding: 2px 5px; width: 750rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; box-sizing: border-box; display: block"
+                        value="{{family_name}}" placeholder="请输入真实姓氏" />
+                </mp-cell>
+                <mp-cell class="name" prop="name" style="text-align:left;" title="名字" ext-class="">
+                    <input class="a-input" bindinput="bindInputCountry"
+                        style="padding: 2px 5px; width: 750rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; display: block; box-sizing: border-box"
+                        value="{{name}}" placeholder="请输入真实名字" />
+                </mp-cell>
+                <mp-cell class="identity" prop="identity" style="text-align:left;" title="身份证" ext-class="">
+                    <input class="a-input" bindinput="bindInputCountry"
+                        style="padding: 2px 5px; width: 750rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; display: block; box-sizing: border-box"
+                        value="{{identityID}}" placeholder="请输入身份证" />
+                </mp-cell>
+                <mp-cell class="passport" prop="passport" style="text-align:left;" title="护照" ext-class="">
+                    <input class="a-input" bindinput="bindInputCountry"
+                        style="padding: 2px 5px; width: 750rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; display: bl; box-sizing: border-box"
+                        value="{{passport}}" placeholder="请输入护照ID" />
+                </mp-cell>
+            </mp-cells>
+        </mp-form>
+    </view>
+</view>

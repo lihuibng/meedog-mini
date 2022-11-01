@@ -1,0 +1,112 @@
+<!--pages/user/basic_info/basic_info.wxml-->
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="container" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <!--view class="page-section page-section-gap">
+        <map id="myMap" style="width: 100%; height: 300px;" latitude="{{ latitude }}" longitude="{{ longitude }}"
+            bindmarkertap="markertap" bindcallouttap="callouttap" bindlabeltap="labeltap" bindpoitap="poitap"
+            markers="{{ markers }}" enable-poi="true" enable-building="true" scale="11">
+        </map>
+    </view-->
+    <view class="asset_salary_modify" wx:if="{{modify == true}}">
+        <mp-form id="form" models="{{formData}}">
+            <mp-cells class="basic">
+                <!--mp-cell class="city" prop="city" style="text-align:center;" title="城市" ext-class="">
+                  
+                    <picker bindchange="bindInputCity"
+                        style="padding: 2px 5px; width: 450rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; "
+                        value="{{cityIndex}}" range="{{cityItems}}">
+                        <view class="weui-select">
+                            {{cityItems[cityIndex]}}</view>
+                    </picker>
+                </mp-cell>
+                <mp-cell class="city" prop="city" style="text-align:center;" title="区" ext-class="">
+                    
+                    <picker bindchange="bindInputDistrict"
+                        style="padding: 2px 5px; width: 450rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; "
+                        value="{{districtIndex}}" range="{{districtItems}}">
+                        <view class="weui-select">
+                            {{districtItems[districtIndex]}}</view>
+                    </picker>
+                </mp-cell-->
+                <mp-cell class="house" prop="house" style="text-align:center;" title="生活地" ext-class="">
+                    <picker mode="multiSelector" bindchange="bindCityMultiChange" bindcolumnchange="bindCityMultiPickerColumnChange" value="{{cityIndex}}" range="{{cityArray}}">
+                        <view class="weui-select" style="width: 200rpx; height: 90rpx; display: block; box-sizing: border-box">
+                            {{cityArray[1][cityIndex[1]]}}
+                        </view>
+                    </picker>
+                </mp-cell>
+
+                <mp-cell class="house" prop="house" style="text-align:center;" title="房产" ext-class="">
+                    <input class="a-input" bindinput="bindInputHouseDesc" style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; display: block; box-sizing: border-box" placeholder="房产：北京海淀房一套" />
+                    <input class="a-input" bindinput="bindInputHouseAsset" style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; display: block; box-sizing: border-box" placeholder="房产总值：(万)/{{house_benchmark}} (万) * 100分"
+                    />
+                </mp-cell>
+                <mp-cell class="deposit" prop="deposit" style="text-align:center;" title="储蓄值" ext-class="">
+                    <input class="a-input" bindinput="bindInputDeposit" style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; display: block; box-sizing: border-box" placeholder="股票、债券、现金 (万)/{{deposit_benchmark}} (万) * 100分"
+                    />
+                </mp-cell>
+                <mp-cell class="salary" prop="salary" style="text-align:center;" title="年收入" ext-class="">
+                    <input class="a-input" bindinput="bindInputSalary" style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; display: block; box-sizing: border-box" placeholder="年收入 (万)/{{salary_benchmark}} (万) * 100分" />
+                </mp-cell>
+                <mp-cell class="other" prop="other" style="text-align:center;" title="其他资产" ext-class="">
+                    <input class="a-input" bindinput="bindInputOther" style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; display: block; box-sizing: border-box" placeholder="车、股权、期权 (万)/{{other_asset_benchmark}} (万) * 100分"
+                    />
+                </mp-cell>
+                <mp-cell class="wealth_score" prop="wealth_score" style="text-align:center;" title="财富值" ext-class="">
+                    <view class="a-input" bindinput="bindInputWealthScore" style="width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; box-sizing: border-box; display: block" placeholder="自评财富分值（100分）">
+                        {{wealth_core}}
+                    </view>
+                </mp-cell>
+                <mp-cell class="wealth_rank" prop="wealth_rank" style="text-align:center;" title="排名" ext-class="">
+                    <view class="a-input" bindinput="bindInputWealthRank" style="padding: 2px 5px; width: 480rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; display: block; box-sizing: border-box">
+                        {{wealth_rank}}
+                    </view>
+                </mp-cell>
+            </mp-cells>
+        </mp-form>
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+        </view>
+    </view>
+    <view class="asset_salary_modify" wx:elif="{{modify == false}}">
+        <mp-form id="form" models="{{formData}}">
+            <mp-cells class="basic">
+                <mp-cell class="city" prop="city" style="text-align:center;" title="城市" ext-class="">
+                    <picker bindchange="bindInputCity" style="padding: 2px 5px; width: 450rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; " value="{{cityIndex}}" range="{{cityItems}}">
+                        <view class="weui-select">
+                            {{cityItems[cityIndex]}}</view>
+                    </picker>
+                </mp-cell>
+                <mp-cell class="city" prop="city" style="text-align:center;" title="区" ext-class="">
+                    <picker bindchange="bindInputDistrict" style="padding: 2px 5px; width: 450rpx; height: 64rpx; border: 1px solid #a1a1a1; border-radius: 5px; " value="{{districtIndex}}" range="{{districtItems}}">
+                        <view class="weui-select">
+                            {{districtItems[districtIndex]}}</view>
+                    </picker>
+                </mp-cell>
+                <mp-cell class="house" prop="house" style="text-align:center;" title="房产评分" ext-class="">
+                    <rich-text>{{house_asset}}</rich-text>
+
+                </mp-cell>
+                <mp-cell class="deposit" prop="deposit" style="text-align:center;" title="储蓄评分" ext-class="">
+
+                    <rich-text>{{house_asset}}</rich-text>
+
+                </mp-cell>
+                <mp-cell class="salary" prop="salary" style="text-align:center;" title="年收入评分" ext-class="">
+                    <rich-text>{{house_asset}}</rich-text>
+                </mp-cell>
+                <mp-cell class="other" prop="other" style="text-align:center;" title="其他评分" ext-class="">
+                    <rich-text>{{house_asset}}</rich-text>
+                </mp-cell>
+                <mp-cell class="wealth_rank" prop="wealth_rank" style="text-align:center;" title="排名" ext-class="">
+                    <view class="a-input">
+                        {{wealth_rank}}
+                    </view>
+                </mp-cell>
+            </mp-cells>
+        </mp-form>
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="submitChange">修改</button>
+        </view>
+    </view>
+</view>

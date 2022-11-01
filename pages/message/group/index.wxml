@@ -1,0 +1,50 @@
+<!--pages/message/group/index.wxml-->
+<!--pages/share/share.wxml-->
+<!--ad unit-id="adunit-815b64bd977a158b"></ad-->
+<!--button wx:if="{{!show}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录 </button-->
+<view class="share">
+    <view wx:for="{{list}}">
+        <view class="author-info" catchtap="">
+            <image class="avatar" src="{{item.userIcon}}" mode="aspectFill"></image>
+            <!--open-data type="userAvatarUrl"> </open-data-->
+            <view class="name-time">
+                <!--open-data type="userNickName" lang="zh_CN"></open-data-->
+                <view>{{item.userNickName}}</view>
+                <view>{{item.modifiedTime}}</view>
+            </view>
+        </view>
+        <view class="share-content" catchtap="toComment" data-item="{{item}}">
+            {{item.content}}
+        </view>
+        <view style="margin-left:9px" catchtap="toComment" data-item="{{item}}">
+            <view class="share-picture" wx:for="{{item.picIds}}" wx:for-item="items" wx:for-index="i"
+                style="width:{{item.picIds.length==1?width*2:width}}px;height:{{item.picIds.length==1?width*2:width}}px">
+                <image catchtap="previews" data-pre="{{item.picIds}}" data-index="{{items}}" mode="aspectFill"
+                    src="{{items}}" />
+            </view>
+        </view>
+        <view class="btn" style="margin-top:8px" catchtap="">
+            <view class="btn-item">
+                <button open-type="share" class="share-btn" catchtap="shareHandle" data-item="{{item}}"
+                    data-index="{{index}}" data-id="{{item.id}}">
+                    <image class="like" src="../../../static/images/share.png"></image>
+                    <text class="num">{{item.forwardCount||0}}</text>
+                </button>
+            </view>
+            <view class="btn-item" catchtap="toComment" data-item="{{item}}">
+                <image class="like" src="../../../static/images/comment.png"></image>
+                <view class="num">{{item.commentCount}}</view>
+            </view>
+            <view class="btn-item">
+                <image class="like {{index==current?'active':''}}" id="like" catchtap="likeHandle"
+                    data-shareId="{{item.id}}" data-index="{{index}}"
+                    src="{{item.likes.like?'../../../static/images/like.png':'../../../static/images/unlike.png'}}">
+                </image>
+                <view class="num">{{item.likeCount}}</view>
+            </view>
+        </view>
+        <view class="box-line"></view>
+    </view>
+    <view class="ball" bindtap="toEdit">+</view>
+    <!-- wx:if="{{isAdmin}}" -->
+</view>

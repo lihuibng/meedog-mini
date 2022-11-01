@@ -1,0 +1,64 @@
+<!--pages/user/love_history/love_history.wxml-->
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="container" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="love-history">
+        <mp-form id="form" models="{{formData}}">
+            <view class="weui-flex">
+                <view class="weui-flex__item">
+                    <picker data-field="date" mode="date" style="text-align: left; padding: 2px 20px; width: 250rpx; height: 64rpx; display: block; box-sizing: border-box"
+                        value="{{startDate}}" start="1900-01-01" end="2100-01-01" bindchange="bindStartDateChange">
+                        <view class="weui-input" style="width: 250rpx; height: 64rpx; display: block; box-sizing: border-box; text-align: center">{{startDate}}</view>
+                    </picker>
+                </view>
+                <view class="weui-flex__item" style="text-align: center; width: 250rpx; height: 64rpx; display: block; box-sizing: border-box">
+                    <text> 至 </text>
+                </view>
+                <view class="weui-flex__item" style="width: 250rpx; height: 64rpx; display: block; box-sizing: border-box; text-align: center">
+                    <picker data-field="date" mode="date" style="text-align:left" value="{{endDate}}"
+                        start="1900-01" end="2100-01" bindchange="bindEndDateChange">
+                        <view class="weui-input" style="width: 250rpx; height: 64rpx; display: block; box-sizing: border-box">{{endDate}}</view>
+                    </picker>
+                </view>
+            </view>
+            <view class="weui-flex" style="text-align: center; width: 725rpx; height: 240rpx; display: flex; box-sizing: border-box" >
+                <mp-cells class="love_history" style="text-align:center;width:720rpx;" >
+                    <mp-cell class="lover_gender" prop="lover_gender" style="text-align:center;" title="对象性别"
+                        ext-class="">
+                        <radio-group class="radio-group" bindchange="genderChange">
+                            <radio class="radio" wx:for-items="{{genders}}" wx:key="name" value="{{item.name}}"
+                                checked="{{item.checked}}">
+                                <text>{{item.value}}</text>
+                            </radio>
+                        </radio-group>
+                    </mp-cell>
+                    <mp-cell class="living_together" prop="living_together" style="text-align:center;" title="是否同居"
+                        ext-class="">
+                        <radio-group class="radio-group" bindchange="livingChange">
+                            <radio class="radio" wx:for-items="{{livings}}" wx:key="name" value="{{item.name}}"
+                                checked="{{item.checked}}">
+                                <text>{{item.value}}</text>
+                            </radio>
+                        </radio-group>
+                    </mp-cell>
+                </mp-cells>
+            </view>
+            <view class="weui-flex">
+                <mp-cells class="love_history">
+                    <mp-cell prop="break_up_reason" style="text-align:center;" title="分手原因" ext-class="">
+                        <textarea name="break_up_reason" id="" cols="30" bindinput="onLoveExperienceInput"
+                            style="border: 1px solid #a1a1a1; width: 480rpx; height: 256rpx; border-radius: 5px"
+                            placeholder="例如: 消费观不合，想买LV(有能力)，对方不愿意" rows="5" maxlength="1260"></textarea>
+                    </mp-cell>
+                    <mp-cell prop="break_up_conclusion" style="text-align:center;" title="分手总结" ext-class="">
+                        <textarea name="break_up_conclusion" id="" cols="30" bindinput="onLoveExperienceInput"
+                            style="border: 1px solid #a1a1a1; width: 480rpx; height: 256rpx; border-radius: 5px"
+                            placeholder="例如: 总体来说，对象人品不错，对我比较积极上心，但是消费观念不合，对象比较内向" rows="5" maxlength="1260"></textarea>
+                    </mp-cell>
+                </mp-cells>
+            </view>
+        </mp-form>
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+        </view>
+    </view>
+</view>

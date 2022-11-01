@@ -1,0 +1,136 @@
+<view class="page">
+    <view class="search">
+        <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+        <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消
+        </view>
+        <view class="search-condition-container" wx:if="{{search_condition_show}}">
+            <mp-form id="form" models="{{formData}}">
+                <view class="page-section page-section-gap" style="display: flex;font-size: 20rpx">
+                    <view class="page-section-title" style="font-size: 20rpx;font-weight: 700;">婚姻: </view>
+
+                    <radio-group name="marriage" wx:for="{{marriages}}" bindchange="bindMarriageChange" style="font-size: 20rpx;">
+                        <label>
+                            <radio value="{{item.name}}" checked="{{item.checked}}"></radio>{{item.name}}
+                        </label>
+                    </radio-group>
+                </view>
+
+                <view class="page-section page-section-gap" style="display: flex;font-size: 20rpx">
+                    <view class="page-section-title" style="font-size: 20rpx;font-weight: 700;">学历: </view>
+
+                    <radio-group name="degrees" wx:for="{{degrees}}" bindchange="bindDegreeChange" style="font-size: 20rpx;">
+                        <label>
+                            <radio value="{{item.name}}" checked="{{item.checked}}"></radio>{{item.name}}
+                        </label>
+                    </radio-group>
+                </view>
+
+                <view class="page-section page-section-gap" style="display: block;">
+                    <view class="page-section-title" style="font-size: 20rpx;"><label style="font-weight: 700;">年龄:
+                        </label> {{ageLow}} 岁 - {{ageHigh}} 岁 </view>
+
+                    <view class="zy-slider">
+                        <zy-slider id="age" minValue="{{ageLow}}" maxValue="{{ageHigh}}" min="18" max="50" blockColor="#d3d3d3" backgroundColor="#B0C4DE" selectedColor="#dcdcdc" bind:lowValueChange="ageLowChange" bind:heighValueChange="ageHighChange" />
+                    </view>
+                    <view class="page-section-title" style="font-size: 20rpx;"><label style="font-weight: 700;">身高</label>: {{heightLow}} cm - {{heightHigh}} cm</view>
+                    <view class="page-section-slider">
+
+                        <zy-slider id="height" minValue="{{heightLow}}" maxValue="{{heightHigh}}" min="145" max="230" blockColor="#d3d3d3" backgroundColor="#B0C4DE" selectedColor="#dcdcdc" bind:lowValueChange="heightLowChange" bind:heighValueChange="heightHighChange" />
+                    </view>
+
+                    <view class="page-section-title" style="font-size: 20rpx;"><label style="font-weight: 700;">年收入:
+                        </label>{{salaryValue}} w</view>
+                    <view class="page-section-slider" style="position: relative; width: 750rpx; height: 48rpx; display: block; box-sizing: border-box">
+                        <slider id="salary" style="padding-left:10rpx;padding-right:35rpx;width: 670rpx;height: 40rpx;z-index: 2;transform: scale(1,0.4);" value="{{salaryValue}}" min="0" max="200" activeColor="#d3d3d3" backgroundColor="#B0C4DE" block-size="20" block-color="#d3d3d3"
+                            selected-color="#dcdcdc" bindchange="salaryChange" bindchanging="salaryChanging" step="5" />
+                    </view>
+                </view>
+                <view class="page-section page-section-gap" style="display: flex;font-size: 20rpx">
+                    <view class="page-section-title" style="font-size: 20rpx;"><label style="font-weight: 700;">房产:
+                        </label> </view>
+                    <checkbox-group name="house" style="font-size: 20rpx;" bindchange="districtChange" wx:for="{{districts}}">
+                        <label>
+                            <checkbox value="{{item.name}}" />{{item.name}}
+                        </label>
+                    </checkbox-group>
+
+                </view>
+                <view class="page-section page-section-gap" style="display: flex;font-size: 20rpx">
+                    <view class="page-section-title" style="font-size: 20rpx;font-weight: 700;">户籍: </view>
+                    <radio-group name="householdRegister" wx:for="{{households}}" bindchange="householdsChange" style="font-size: 20rpx;">
+                        <label>
+                            <radio value="{{item.name}}" checked="{{item.checked}}"></radio>{{item.name}}
+                        </label>
+                    </radio-group>
+                </view>
+
+                <view class="page-section page-section-gap" style="display: flex;font-size: 20rpx">
+                    <view class="page-section-title" style="font-size: 20rpx;"><label style="font-weight: 700;">学校:
+                        </label> </view>
+                    <checkbox-group name="house" style="font-size: 20rpx;" bindchange="bindCollegeStatusChange" wx:for="{{collegeStatus}}">
+                        <label>
+                            <checkbox value="{{item.name}}" />{{item.name}}
+                        </label>
+                    </checkbox-group>
+                </view>
+                <view class="page-section page-section-gap" style="display: flex;font-size: 20rpx">
+                    <view class="page-section-title" style="font-size: 20rpx;"><label style="font-weight: 700;">星座:
+                        </label> </view>
+                    <checkbox-group name="constellation" style="font-size: 20rpx;" bindchange="constellationChange" wx:for="{{constellations}}">
+                        <label>
+                            <checkbox value="{{item.name}}" />{{item.name}}
+                        </label>
+                    </checkbox-group>
+                </view>
+
+                <view class="page-section page-section-gap" style="display: flex;font-size: 20rpx">
+                    <view class="page-section-title" style="font-size: 20rpx;"><label style="font-weight: 700;">生肖:
+                        </label> </view>
+                    <checkbox-group name="zodiac" style="font-size: 16rpx;" bindchange="zodiacChange" wx:for="{{zodiacs}}">
+                        <label style="text-align:right;font-size: 20rpx;">
+                            <checkbox value="{{item.name}}" />{{item.name}}
+                        </label>
+                    </checkbox-group>
+                </view>
+
+                <view class="search-condition" style="display:flex;">
+                    <button class="search-condition-confirm" style="width:30%;font-size: 20rpx;font-weight: 700;" type="primary" bindtap="foldForm">收起</button>
+                    <button class="search-condition-confirm" style="width:30%;font-size: 20rpx;font-weight: 700;" type="primary" bindtap="resetForm">重置</button>
+                    <button class="search-condition-confirm" style="width:30%;font-size: 20rpx;font-weight: 700;" type="primary" bindtap="submitForm">搜索</button>
+                </view>
+            </mp-form>
+        </view>
+        <view class="search-condition-button" wx:else="{{search_condition_show}}">
+            <button class="search-button" bindtap="bindSearchTap" style="font-weight: 700;">高级搜索</button>
+        </view>
+    </view>
+    <view class='space'></view>
+
+    <view class="lover-container">
+        <view class="lover-box" wx:for="{{lover}}" wx:key="id" bindtap="toDetailsTap" data-id="{{item.uid}}">
+            <view class="img-box">
+                <image src="{{item.picId}}" class="image" mode="aspectFill" lazy-load="true" />
+            </view>
+            <view class="lover-i-container">
+                <view class="lover-birthday">{{item.birthday}}</view>
+                <view class="lover-height">{{item.height}}</view>
+                <view class="lover-zodiac">{{item.zodiac}}</view>
+                <view class="lover-constellation">{{item.constellation}}</view>
+            </view>
+            <view class="lover-info-container">
+                <view class="lover-registered-residence">{{item.registeredResidenceCity}}</view>
+                <view class="lover-job">{{item.jobType}}</view>
+                <view class="lover-degree">{{item.degree}}</view>
+            </view>
+
+
+            <!--view class="lover-username">{{item.username}}</view>
+            <view class="lover-email-container">
+                <view class="lover-email">{{item.email}}</view>
+            </view-->
+        </view>
+    </view>
+    <view hidden="{{loadingMoreHidden ? true : false}}" class="weui-loadmore weui-loadmore_line" style='margin-top:60rpx;margin-bottom:30rpx;'>
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">没有更多啦</view>
+    </view>
+</view>

@@ -1,0 +1,346 @@
+.page {
+    background: #ffffff;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+    /*position: relative;*/
+}
+
+.search-condition-container {
+    padding-top: 10rpx;
+    padding-left: 10rpx;
+    width: 700rpx;
+    margin-left: 25rpx;
+    position: relative;
+    z-index: 1;
+}
+
+.search-condition-button {
+    padding-top: 10rpx;
+    padding-left: 10rpx;
+    width: 700rpx;
+    margin-left: 25rpx;
+    height: 64rpx;
+    position: relative;
+    z-index: 1;
+}
+
+.search-button {
+    border-radius: 25rpx;
+    font-size: 16rpx;
+}
+
+checkbox {
+    transform: scale(0.5, 0.5);
+}
+
+radio {
+    transform: scale(0.5, 0.5);
+}
+
+.loverDynamic {
+    position: relative;
+    padding-top: 10rpx;
+    padding-left: 10rpx;
+    width: 700rpx;
+    margin-left: 25rpx;
+    background: rgba(0, 0, 0, 0.05);
+    color: #fff;
+    border-radius: 32rpx;
+    padding: 8rpx, 16rpx;
+    font-size: 24rpx;
+}
+
+.loverDynamic .swiper2 {
+    width: 100%;
+    height: 34rpx;
+}
+
+.loverDynamic-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 36rpx;
+}
+
+.loverDynamic-item image {
+    width: 32rpx;
+    height: 32rpx;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.loverDynamic-item text {
+    margin-left: 8rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.category-container {
+    padding: 0 0 10px 0;
+    position: relative;
+    background-color: white;
+}
+
+.category-box {
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 18px 0px rgba(5, 5, 5, 0.15);
+    width: 700rpx;
+    margin-left: 25rpx;
+    border-radius: 10px;
+    padding: 20rpx 0;
+    position: inherit;
+    z-index: 2;
+}
+
+.category-list {
+    width: 140rpx;
+    text-align: center;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.category-column {
+    width: 100%;
+    margin-top: 20rpx;
+    overflow: hidden;
+}
+
+.category-imgbox {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.category-title {
+    font-size: 24rpx;
+    text-align: center;
+}
+
+.notice-icon {
+    width: 130rpx;
+    height: 33rpx;
+    margin-right: 10px;
+}
+
+.notice-box {
+    width: 700rpx;
+    margin-left: 25rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    border-bottom: 1rpx solid #efeff4;
+}
+
+.notice_swiper {
+    height: 88rpx;
+    width: 100%;
+}
+
+.notice_itemr {
+    padding-left: 16rpx;
+    font-size: 24rpx;
+    overflow: hidden;
+    color: #22211f;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.type-item-on {
+    color: #e64340;
+    border-bottom: 1rpx solid #e64340;
+}
+
+.weui-loadmore {
+    margin-bottom: 0px;
+}
+
+.lover-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-sizing: content-box;
+    padding: 0 24rpx;
+}
+
+.lover-box {
+    width: 339rpx;
+    background-color: #fff;
+    overflow: hidden;
+    margin-bottom: 24rpx;
+    border-radius: 5px;
+    border: 1px solid #D1D1D1;
+    padding-bottom: 10rpx;
+}
+
+.lover-box .img-box {
+    width: 339rpx;
+    height: 339rpx;
+    overflow: hidden;
+}
+
+.lover-box .img-box image {
+    width: 339rpx;
+    height: 339rpx;
+}
+.lover-box .lover-i-container {
+    display: flex;
+    align-items: baseline;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 16rpx;
+    color: #000;
+    margin-left: 24rpx;
+}
+/*  padding: 24rpx 0 10rpx 0; padding: 24rpx 0 10rpx 0; */
+.lover-box .lover-info-container {
+    display: flex;
+    align-items: baseline;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 16rpx;
+    color: #000;
+    margin-left: 24rpx;
+}
+
+.lover-box .lover-birthday {
+    overflow: hidden;
+    font-size: 16rpx;
+    color: #f36438;
+    margin-left: 8rpx;
+}
+
+.lover-box .lover-job {
+    overflow: hidden;
+    font-size: 16rpx;
+    color: #f36438;
+    margin-left: 8rpx;
+}
+
+.lover-box .lover-height {
+    overflow: hidden;
+    font-size: 16rpx;
+    color: #f36438;
+    margin-left: 8rpx;
+}
+
+.lover-box .lover-degree {
+    overflow: hidden;
+    font-size: 16rpx;
+    color: #f36438;
+    margin-left: 8rpx;
+}
+
+.lover-box .lover-constellation {
+    overflow: hidden;
+    font-size: 16rpx;
+    color: #f36438;
+    margin-left: 8rpx;
+}
+
+.lover-box .lover-zodiac {
+    overflow: hidden;
+    font-size: 16rpx;
+    color: #f36438;
+    margin-left: 8rpx;
+}
+
+.lover-box .lover-registered-residence {
+    overflow: hidden;
+    font-size: 16rpx;
+    color: #f36438;
+    margin-left: 8rpx;
+}
+
+/*
+.lover-box .lover-username {
+    width: 280rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 16rpx;
+    padding: 24rpx 0 10rpx 0;
+    color: #000;
+    margin-left: 24rpx;
+}
+
+.lover-box .lover-email-container {
+    display: flex;
+    align-items: baseline;
+}
+
+.lover-box .lover-email {
+    overflow: hidden;
+    font-size: 12rpx;
+    color: #f36438;
+    margin-left: 24rpx;
+}*/
+
+.pos-fiexd {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.gift-float {
+    position: fixed;
+    left: 15rpx;
+    bottom: 30rpx;
+    width: 80rpx;
+    height: 80rpx;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    border: 1rpx solid #ddd;
+}
+
+.gift-float image {
+    width: 60rpx;
+    height: 60rpx;
+    margin-top: 10rpx;
+}
+
+.category-lover-title {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8rpx;
+    border-bottom: 1rpx solid #efeff4;
+}
+
+.category-lover-title .more {
+    color: #666;
+    font-size: 24rpx;
+    margin-right: 32rpx;
+}
+
+.weui-media-box {
+    padding-bottom: 0rpx;
+}
+
+.progress {
+    width: 686rpx;
+    padding: 0 32rpx;
+    margin-bottom: 16rpx;
+}
+
+.table-icon-loverlist {
+    width: 34rpx;
+    height: 45rpx;
+    margin-right: 18rpx;
+}
+
+van-divider {
+    color: black !important;
+    font-size: 16px !important;
+    padding: 0 28rpx;
+    position: relative;
+}
